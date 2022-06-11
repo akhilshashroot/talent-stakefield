@@ -149,7 +149,7 @@
         <div class="page-wrapper">
             <!-- header of the page -->
             <!-- header of the page -->
-            @include('stakeheader') 
+            @include('stakefield.stakeheader') 
             <!--/header of the page -->
             <!--/header of the page -->
             <main class="banner">
@@ -273,10 +273,10 @@
 
 
                 
-                @include('staketalent') 
-                @include('enquiry') 
+                @include('stakefield.staketalent') 
+                @include('stakefield.enquiry') 
 
-                @include('stakefooter') 
+                @include('stakefield.stakefooter') 
 
 
 </div>
@@ -363,6 +363,7 @@ $(function () {
     var table = $('.table').DataTable({
         processing: true,
         serverSide: true,
+        "pageLength": 10,
         ajax: {
           url: "{{ route('customsearch.index') }}",
           data: function (d) {

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EnquiryController;
+use App\Http\Controllers\CustomSearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +17,10 @@ use App\Http\Controllers\EmployeeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('stakefield.stakefield');
 });
+Route::get('/custom-search', [App\Http\Controllers\CustomSearchController::class, 'index'])->name('customsearch.index');
+Route::post('enquiry-form', [App\Http\Controllers\EnquiryController::class, 'store'])->name('store');
 
 Auth::routes();
 

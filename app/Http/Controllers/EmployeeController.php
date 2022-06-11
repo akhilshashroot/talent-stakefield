@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\StakefieldUser;
 
 class EmployeeController extends Controller
 {
@@ -46,7 +46,7 @@ class EmployeeController extends Controller
             'rate' => 'required',
             'talentid' => 'required'
         ]);
-        $user = new User;
+        $user = new StakefieldUser;
         $user->name = $validated['name'];
         $user->email = $validated['email'];
         $user->phone = $validated['phone'];
@@ -83,7 +83,7 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        $employee = User::where('id',$id)->first();
+        $employee = StakefieldUser::where('id',$id)->first();
         return response()->json($employee, 200);
     }
 

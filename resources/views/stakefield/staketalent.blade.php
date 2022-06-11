@@ -17,10 +17,10 @@
     <h2 class="title custom text-center" id="verified-sec" style="margin-top: 30px;" rel="₹">Talents Pool</h2>
     <!-- Set up the datatable -->
     <div class="w3-container"> 
-    <table class="table table-hover" id="filterTable">
+    <table class="table table-hover" id="filterTable"  style="width: 100%;">
       <thead class="tdhcc">
         <tr>
-          <th scope="col">Sl No</th>
+          <th scope="col">#</th>
           <th scope="col">Talent ID</th>
           <th scope="col">Skillset </th>
           <th scope="col">Experience </th>

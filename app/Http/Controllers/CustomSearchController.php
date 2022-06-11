@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Models\User;
+use App\Models\StakefieldUser;
 use DataTables;
 class CustomSearchController extends Controller
 {
@@ -12,8 +12,8 @@ class CustomSearchController extends Controller
     {
         if ($request->ajax()) {
             DB::statement(DB::raw('set @rownum=0'));
-            $data = User::select(DB::raw('@rownum := 0 r'))
-            ->select(DB::raw('@rownum := @rownum + 1 AS rank'),'users.*');
+            $data = StakefieldUser::select(DB::raw('@rownum := 0 r'))
+            ->select(DB::raw('@rownum := @rownum + 1 AS rank'),'stakefield_users.*');
             return Datatables::of($data)
                     ->addIndexColumn()
                     
@@ -48,7 +48,7 @@ class CustomSearchController extends Controller
         }
         
      
-     return view('stakefield');
+     return view('stakefield.stakefield');
     }
 }
 

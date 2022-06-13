@@ -44,9 +44,14 @@ class EmployeeController extends Controller
             'time' => 'required',
             'availability' => 'required',
             'rate' => 'required',
-            'talentid' => 'required'
+            'talentid' => 'required',
+            'userid'=>'nullable'
         ]);
-        $user = new StakefieldUser;
+        if($validated['userid']) {
+            $user =  StakefieldUser::where('id',$validated['userid'])->first();
+        } else {
+            $user = new StakefieldUser;
+        }
         $user->name = $validated['name'];
         $user->email = $validated['email'];
         $user->phone = $validated['phone'];
@@ -57,7 +62,9 @@ class EmployeeController extends Controller
         $user->rate = $validated['rate'];
         $user->employee_id = $validated['talentid'];
         $res = $user->save();
-        if($res) {
+        if($res && $validated['userid']) {
+            return redirect()->route('home')->with('message', 'Employee updated successfully');
+        } elseif($res) {
             return redirect()->route('home')->with('message', 'Employee added successfully');
         } else {
             return redirect()->route('home')->with('error', 'Some errors occur');
@@ -107,6 +114,8 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        StakefieldUser::find($id)->delete();
+  
+        return back();
     }
 }

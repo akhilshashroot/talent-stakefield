@@ -92,7 +92,10 @@
                 </ul>
             </li>
             
-            <li><a href="sign-in.html" class="mega-menu xs-hide" data-close="true"><i class="zmdi zmdi-power"></i></a></li>
+            <li><form action="{{ route('logout') }}" method="post">
+@csrf.
+<button type="submit"><i class="zmdi zmdi-power"></i></button>
+</form></li>
             <li class=""><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
         </ul>
     </div>
@@ -188,7 +191,7 @@
                     <div class="header">
                         <h2> Employee List </h2>
                         <ul class="header-dropdown">
-                        <button type="button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#largeModal">Add Employee</button>
+                        <button type="button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#largeModal" onclick="resetfn()">Add Employee</button>
                         </ul>
                     </div>
                     <div class="body">
@@ -225,7 +228,11 @@
                                     <td>{{$employee->availability}}</td>
                                     <td>{{$employee->rate}}</td>
                                     <td><button type="button" class="btn btn-raised btn-primary waves-effect" onclick="editfn({{$employee->id}})">Edit</button>
-                                    <button type="button" class="btn btn-raised btn-danger waves-effect">Delete</button></td>
+                                    <form method="POST" action="{{ route('employee.destroy', $employee->id) }}">
+                            @csrf
+                            <input name="_method" type="hidden" value="DELETE">
+                            <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
+                        </form></td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -245,6 +252,7 @@
             <div class="modal-body">
                 <form id="employee_add" method="POST" action="{{route('employee.store')}}">
                     @csrf
+                    <input type="hidden" name="userid" id="userid" value="">
                             <div class="form-group">
                             <label class="form-label">Employee Name</label>
                                 <div class="form-line">
@@ -325,8 +333,10 @@
 
 <script src="{{asset('bundles/mainscripts.bundle.js')}}"></script><!-- Custom Js --> 
 <script src="{{asset('js/pages/tables/jquery-datatable.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 <script>
     function editfn(id) {
+        console.log("hi");
         $.ajaxSetup({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -350,13 +360,35 @@
             $('#availability').val(res.availability);
             $('#rate').val(res.rate);
             $('#talentid').val(res.employee_id);
+            $('#userid').val(id);
             let updateurl = "{{ route('employee.update', ':id') }}";
             updateurl = updateurl.replace(':id', id);
-            $("#employee_add").attr("method", "patch");
-            $('#employee_add').attr('action', updateurl);
+            //$("#employee_add").attr("method", "patch");
+            //$('#employee_add').attr('action', updateurl);
         }
       });
     }
+    $('.show_confirm').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+              title: `Are you sure you want to delete this record?`,
+              text: "If you delete this, it will be gone forever.",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
+      function resetfn() {
+        $('#employee_add').trigger("reset");
+        $('#userid').val('');
+      }
 </script>
 </body>
 </html>

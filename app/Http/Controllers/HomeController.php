@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\StakefieldUser;
 
 class HomeController extends Controller
 {
@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $employees = User::whereNotIn('employee_id', ['ADMN123'])->get();
+        $employees = StakefieldUser::whereNotIn('employee_id', ['ADMN123'])->get();
         return view('home',compact('employees'));
     }
 }

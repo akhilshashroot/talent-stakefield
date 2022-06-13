@@ -240,7 +240,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="largeModalLabel">Modal title</h4>
+                <h4 class="modal-title" id="largeModalLabel">Add Employee</h4>
             </div>
             <div class="modal-body">
                 <form id="employee_add" method="POST" action="{{route('employee.store')}}">
@@ -301,7 +301,7 @@
                             </div>
                         </div>
             <div class="modal-footer">
-                <button class="btn btn-link waves-effect" type="submit">SAVE CHANGES</button>
+                <button class="btn btn-link waves-effect" type="submit" id="submitbtn">SAVE CHANGES</button>
                 <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
                 </form>
             </div>
@@ -349,6 +349,11 @@
             $('#time').val(res.turnaround_time);
             $('#availability').val(res.availability);
             $('#rate').val(res.rate);
+            $('#talentid').val(res.employee_id);
+            let updateurl = "{{ route('employee.update', ':id') }}";
+            updateurl = updateurl.replace(':id', id);
+            $("#employee_add").attr("method", "patch");
+            $('#employee_add').attr('action', updateurl);
         }
       });
     }

@@ -355,7 +355,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>  
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link>  
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <script>
 
 $(function () {
@@ -402,14 +402,44 @@ $(function () {
 });
 </script>
 <script type="text/javascript">
+
     $(document).on('click','#passingID',function(e) {
-        var ids = $(this).attr('data-id');
-        $("#idkl").val( ids );
+
+        // var ids = $(this).attr('data-id');
+        // $("#idkl").val( ids );
+        var val = [];
+        $(':checkbox:checked').each(function(i){
+          val[i] = $(this).val();
+        });
+       // alert(val);
+        $("#idkl").val( val );
         $('#myModal').modal('show');
     });
+    function valueChanged()
+    {
+        if($('.checkbox-change').is(":checked")){
+            $("#passingID").removeClass("disabled");
+            $("#toolID").removeAttr("data-original-title"); 
+        }else{
+            $("#passingID").addClass("disabled");
 
+        }   
 
-  
+            
+    }
+    //   $(function() {
+    //    $('.tooltip-wrapper').tooltip({position: "bottom"});
+    //   });
+    $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        // $('#buttonID').click(function(){
+        //     alert(this.checked);
+        //  });
+
+        if($('#buttonID').is(':checked'))
+          alert('');
   </script>
     <script>
             if ($("#contactUsForm").length > 0) {

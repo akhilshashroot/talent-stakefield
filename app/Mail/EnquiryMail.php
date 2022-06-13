@@ -30,7 +30,7 @@ class EnquiryMail extends Mailable
     public function build()
     {
         $data = $this->data ;
-        $message_content = "<h3> Talent Enquiry </h3><b>Name :</b> ".$data['name']."<br/><br/><b>
+        $message_content = "<b>Name :</b> ".$data['name']."<br/><br/><b>
         Email :</b> ".$data['email']."<br/><br/><b>
         Phone :</b> ".$data['phone']."<br/><br/><b>
         Message : </b>".$data['message']."<br/><br/><b>";

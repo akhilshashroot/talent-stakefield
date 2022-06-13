@@ -10,7 +10,19 @@
     padding: 4rem;
     position: relative;
     }
-  
+  .btn-enquiry{
+    margin: auto;
+    width: 8%;
+    /* border: 3px solid green; */
+    padding: 10px;
+  }
+
+  .btn-enquiry-top{
+    margin: auto;
+    width:13%;
+    /* border: 3px solid green; */
+    padding: 10px;
+  }
     .dataTables_wrapper .dataTables_paginate .paginate_button {
     box-sizing: border-box;
     display: inline-block;
@@ -134,7 +146,19 @@ thead {
     <!-- Create the drop down filter -->
     <h2 class="title custom text-center" id="verified-sec" style="margin-top: 30px;" rel="₹">Talents Pool</h2>
     <!-- Set up the datatable -->
+    <!-- <div class="btn-enquiry">
+    <div class="tooltip-wrapper disabled" data-title="Search and select profiles to enable this button">
+    <a  class="btn btn-primary btn-sm disabled" id="passingID" style="color: #fff;"  >Enquiry</a>
+</div></div> -->
+
     <div class="w3-container"> 
+    <!-- <div class="btn-enquiry-top">
+    <span class="d-inline-block" id="toolID" tabindex="0" data-toggle="tooltip"
+              data-placement="right" title="Search and select talents to enable this button">
+              <a  class="btn btn-primary btn-sm disabled" id="passingID" style="color: #fff;"  >Enquiry</a>
+
+    </span>
+  </div> -->
     <table class="table table-hover" id="filterTable"  style="width: 100%;">
       <thead class="tdhcc">
         <tr>
@@ -167,5 +191,13 @@ thead {
       </tbody>
 
     </table>
+<div class="btn-enquiry">
+    <span class="d-inline-block" id="toolID" tabindex="0" data-toggle="tooltip"
+              data-placement="right" title="Search and select talents to enable this button">
+              <a  class="btn btn-primary btn-sm disabled" id="passingID" style="color: #fff;"  >Enquiry</a>
+
+    </span>
+  </div>
 </div>
  
+

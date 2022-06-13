@@ -23,16 +23,16 @@ class EnquiryController extends Controller
         $save->name = $request->name;
         $save->email = $request->email;
         $save->phone = $request->phone;
-        $save->user_id = $request->idkl;
+        $save->employee_id = $request->idkl;
         $save->save();
-        $talent_id=StakefieldUser::find($request->idkl)->employee_id;
+        //$talent_id=StakefieldUser::find($request->idkl)->employee_id;
         $data=array();
         $data['name']    		= $request->name;
         $data['email'] 		=  $request->email;
         $data['subject'] 		=  'Enquiry';
         $data['phone'] 		=  $request->phone;
 
-        $data['message']		=  'There is an enquiry for Talent Id'.$talent_id;
+        $data['message']		=  'There is an enquiry for Talent Id -'. $request->idkl;
      //   try {
            Mail::send(new EnquiryMail($data));
           //  $er['stat'] = 1;

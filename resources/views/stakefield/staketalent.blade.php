@@ -12,7 +12,7 @@
     }
   .btn-enquiry{
     margin: auto;
-    width: 8%;
+    width: 20%;
     /* border: 3px solid green; */
     padding: 10px;
   }
@@ -191,13 +191,13 @@ thead {
       </tbody>
 
     </table>
-<div class="btn-enquiry">
+<!-- <div class="btn-enquiry">
     <span class="d-inline-block" id="toolID" tabindex="0" data-toggle="tooltip"
               data-placement="right" title="Search and select talents to enable this button">
               <a  class="btn btn-primary btn-sm disabled" id="passingID" style="color: #fff;"  >Enquiry Now</a>
 
     </span>
-  </div>
+  </div> -->
 </div>
  
 

@@ -9932,7 +9932,7 @@ font-family: 'Open Sans', sans-serif;
 .footer .footer-main {
 	/*background: $footer-bg-image;*/
 	background-color: #000;
-	position: relative;
+	/* position: relative; */
 	color: #7d7d7d;
 	z-index: 2;
 }

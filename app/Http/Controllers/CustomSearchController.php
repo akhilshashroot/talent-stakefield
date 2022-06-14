@@ -36,8 +36,9 @@ class CustomSearchController extends Controller
                     })    
                     ->addColumn('action', function($row){
   
-                       // $btn = '<a  class="btn btn-primary btn-sm" id="passingID" style="color: #fff;" data-id='.$row['id'].'>Select</a>';
-                          $btn='<input type="checkbox" class="checkbox-change" data-id='.$row['employee_id'].' id="buttonID" onchange="valueChanged()" name="enquiry" value='.$row['employee_id'].'>';
+                        $btn = '<a  class="btn btn-primary btn-sm checker" id=add-'.$row['id'].' style="color: #fff;" data-id='.$row['id'].' >Add</a>
+                        <a  class="btn btn-primary btn-sm remover" id='.$row['id'].' style="color: #fff;display:none;" data-id='.$row['id'].' >Remove</a>';
+                        //   $btn='<input type="checkbox" class="checkbox-change" data-id='.$row['employee_id'].' id="buttonID" onchange="valueChanged()" name="enquiry" value='.$row['employee_id'].'>';
                          return $btn;
                  })
                

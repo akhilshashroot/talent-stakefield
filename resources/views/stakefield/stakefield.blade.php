@@ -42,6 +42,18 @@
     .parallax:before {
         background: none;
     }
+    .p-class{
+        color:#fff;
+    }
+    #footer {
+            position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/ 
+            height: 60px;
+            background: grey;
+        }
     .paging_simple_numbers{
         text-align: right;
     }
@@ -116,7 +128,14 @@
     .banner-color {
         color: #55565b;
     }
-
+    /* .search-class {
+      display: none;
+    }
+    @media (max-width: 768px) {
+     .search-class{
+        padding: 1px 1px 4px 100px;
+      }
+    } */
     .button-touch {
         background: #55565b;
         border-color: #55565b;
@@ -275,9 +294,9 @@
                 
                 @include('stakefield.staketalent') 
                 @include('stakefield.enquiry') 
-
+            
                 @include('stakefield.stakefooter') 
-
+              
 
 </div>
 <!-- open/close -->
@@ -292,7 +311,11 @@
         </form>
     </div>
 </div>
+<div id="footer" style="display:none;">
+                
+</div>
 <a href="#" class="section-scroll" id="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
 <!-- jQuery Library -->
 <!-- jQuery Library -->
 <script src="{{asset('stakefield/vendors/jquery/jquery-2.1.4.min.js')}}"></script>
@@ -396,7 +419,7 @@ $(function () {
   
    // $('#filterTable_filter').before('<div id="theAppendedDiv">The Appended Div<div>')
 
-    $(".dataTables_filter").prepend('<select name="profile_data_field" id="approved" style="padding: 5px;"> <option value="">--Select--</option><option value="employee_id">Talent ID</option> <option value="skill_set"> Skillset </option> <option value="experience">Experience</option> <option value="turnaround_time"> Turnaround time </option> <option value="availability"> Availability </option> <option value="rate"> Rate </option> </select>&nbsp;')
+   $(".dataTables_filter").prepend('<select name="profile_data_field" id="approved" style="padding: 5px;"> <option value="">--Select--</option><option value="employee_id">Talent ID</option> <option value="skill_set"> Skillset </option> <option value="experience">Experience</option> <option value="turnaround_time"> Turnaround time </option> <option value="availability"> Availability </option> <option value="rate"> Rate </option> </select>&nbsp;');
     // Append an element with ID container
   
 });
@@ -407,14 +430,92 @@ $(function () {
 
         // var ids = $(this).attr('data-id');
         // $("#idkl").val( ids );
-        var val = [];
-        $(':checkbox:checked').each(function(i){
-          val[i] = $(this).val();
-        });
-       // alert(val);
-        $("#idkl").val( val );
+    //     var val = [];
+    //     $(':checkbox:checked').each(function(i){
+    //       val[i] = $(this).val();
+    //     });
+    //    // alert(val);
+    //     $("#idkl").val( val );
         $('#myModal').modal('show');
     });
+  let clicks = 0;
+  let val = [];
+  let array1 = [];
+    $(document).on('click','.checker',function(e) {
+        clicks += 1;
+       // console.log(clicks)
+        var add_id = $(this).attr('data-id');
+        document.getElementById("footer").innerHTML = "<span class='p-class'>you selected " +clicks+ " profile</span> <a  class='btn btn-primary btn-sm' style='float:right;color:#fff;' id='passingID'>Enquiry Now</a>";
+        $('#footer').show();
+        //alert(add_id);
+        val.push( $(this).data('id') );
+        //localStorage.setItem("arrays", val);
+        $("#idkl").val( val );
+        $('#add-'+add_id).hide();
+        $('#'+add_id).show();
+   });
+
+   $(document).on('click','.remover',function(e) {
+      
+         clicks=clicks - 1;
+        //  var j=[];
+        // j=localStorage.getItem("arrays");
+        var remove_id = $(this).attr('data-id');
+     
+          // console.log(val);
+        //val.splice( $.inArray(remove_id,val) ,1 );
+        var result = val.filter(function(elem){
+            return elem != remove_id; 
+          });
+        val=result;
+        //localStorage.setItem("arrays", result);
+
+      // console.log(val);
+        $("#idkl").val( val );
+        document.getElementById("footer").innerHTML = "<span class='p-class'>you selected " +clicks+ " profile</span> <a  class='btn btn-primary btn-sm' style='float:right;color:#fff;' id='passingID'>Enquiry Now</a>";
+        if( clicks==0){
+            $('#footer').hide();
+
+        }else{
+            $('#footer').show();
+        }
+       
+        //alert(add_id);
+        $('#add-'+remove_id).show();
+        $('#'+remove_id).hide();
+   });
+    // var clicks = 0;
+
+    //   function onClick() {
+    //     clicks += 1;
+    //     console.log(clicks)
+    //     var add_id = $(this).attr('data-id');
+    //     document.getElementById("footer").innerHTML = "you selected "+clicks+ "profiles <a  class='btn btn-primary btn-sm' id='passingID'>Enquiry Now</a>";
+    //     $('#footer').show();
+    //     alert(add_id);
+    //     $('#add-'+add_id).hide();
+    //     $('#'+add_id).show();
+
+    // };
+
+    function onClicker() {
+        // clicks += 1;
+        // console.log(clicks)
+       // var id = $(this).attr('data-id');
+        $('#footer').show();
+        //document.getElementById("footer").innerHTML = "you selected "+clicks+ "profiles <a  class='btn btn-primary btn-sm' id='passingID'>Enquiry Now</a>";
+        //$('#footer').show();
+    };
+//     $(document).on('click','#stickyID',function(e) {
+
+//         // var ids = $(this).attr('data-id');
+//         // $("#idkl").val( ids );
+//         var clicks = 0;
+//          clicks += 1;
+//          document.getElementById("clicks").innerHTML = clicks;
+
+//         $('#footer').show();
+//    });
     function valueChanged()
     {
         if($('.checkbox-change').is(":checked")){
@@ -438,8 +539,8 @@ $(function () {
         //     alert(this.checked);
         //  });
 
-        if($('#buttonID').is(':checked'))
-          alert('');
+        if($('#buttonID').is(':checked'));
+         
   </script>
     <script>
             if ($("#contactUsForm").length > 0) {
@@ -494,6 +595,12 @@ $(function () {
         swal("Thank you fro contacting us", "success");  
         $('#myModal').modal('hide');
          $('body').removeClass('modal-open');
+         $('.remover').hide(); 
+         $('#footer').hide();
+         $('.checker').show(); 
+          clicks = 0; 
+          val = [];
+         
         }
         });
         }

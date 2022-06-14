@@ -194,7 +194,7 @@ thead {
 <div class="btn-enquiry">
     <span class="d-inline-block" id="toolID" tabindex="0" data-toggle="tooltip"
               data-placement="right" title="Search and select talents to enable this button">
-              <a  class="btn btn-primary btn-sm disabled" id="passingID" style="color: #fff;"  >Enquiry</a>
+              <a  class="btn btn-primary btn-sm disabled" id="passingID" style="color: #fff;"  >Enquiry Now</a>
 
     </span>
   </div>

@@ -18,16 +18,16 @@ class DatabaseSeeder extends Seeder
     {
         $faker = Faker::create();
         $availability = $faker->randomElement(['full-time', 'part-time']);
-        $skill_set = $faker->randomElement(['java,aws', 'python','UI']);
+        $skill_set = $faker->randomElement(['java','python']);
 
     	foreach (range(1,100) as $index) {
             DB::table('stakefield_users')->insert([
                 'name' => $faker->name($availability),
                 'email' => $faker->email,
-                'employee_id' => Str::random(4),
-                'skill_set' => $faker->name($skill_set),
-                'experience' => $faker->date($format = 'Y-m-d', $max = 'now'),
-                'turnaround_time' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'employee_id' => $faker->numerify('######'),
+                'skill_set' => $skill_set,
+                'experience' => $faker->randomDigit,
+                'turnaround_time' => $faker->randomDigit,
                 'availability' => $availability,
                 'rate' =>$faker->randomDigit,
 

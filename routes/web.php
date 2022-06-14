@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\CustomSearchController;
 
@@ -26,3 +26,9 @@ Auth::routes();
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('employee', EmployeeController::class);
+Route::get('/enquiry-list', [App\Http\Controllers\Admin\EnquiryController::class, 'index'])->name('enquirylist');
+
+/*Route::group(['middleware' => 'auth'], function() {
+    Route::get('/changePassword',[App\Http\Controllers\HomeController::class, 'showChangePasswordGet'])->name('changePasswordGet');
+    Route::post('/changePassword',[App\Http\Controllers\HomeController::class, 'changePasswordPost'])->name('changePasswordPost');
+});*/

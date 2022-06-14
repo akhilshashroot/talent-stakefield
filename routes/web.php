@@ -28,7 +28,7 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::resource('employee', EmployeeController::class);
 Route::get('/enquiry-list', [App\Http\Controllers\Admin\EnquiryController::class, 'index'])->name('enquirylist');
 
-/*Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function() {
     Route::get('/changePassword',[App\Http\Controllers\HomeController::class, 'showChangePasswordGet'])->name('changePasswordGet');
     Route::post('/changePassword',[App\Http\Controllers\HomeController::class, 'changePasswordPost'])->name('changePasswordPost');
-});*/
+});

@@ -50,8 +50,8 @@
        </ul>
         <ul class="nav navbar-nav navbar-right"> 
             <li class="dropdown">
-                <!--<a href="{{route('changePasswordGet')}}"  role="button">Change Password
-                </a>-->
+                <a href="{{route('changePasswordGet')}}"  role="button">Change Password
+                </a>
                 <ul class="dropdown-menu slideDown">
                     <li class="header">TASKS</li>
                     <li class="body">
@@ -187,6 +187,7 @@
 <script src="{{asset('bundles/mainscripts.bundle.js')}}"></script><!-- Custom Js --> 
 <script src="{{asset('js/pages/tables/jquery-datatable.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script src="{{asset('plugins/jquery-validation/jquery.validate.js')}}"></script>
 <script>
     function editfn(id) {
         console.log("hi");
@@ -242,6 +243,31 @@
         $('#employee_add').trigger("reset");
         $('#userid').val('');
       }
+      $(function () {
+    $('#changepwd_form').validate({
+        rules: {
+            'current-password': {
+                required: true
+            },
+            'new-password': {
+                required: true
+            },
+            'new-password-confirm': {
+                required: true,
+                equalTo : "#new-password"
+            }
+        },
+        highlight: function (input) {
+            $(input).parents('.form-line').addClass('error');
+        },
+        unhighlight: function (input) {
+            $(input).parents('.form-line').removeClass('error');
+        },
+        errorPlacement: function (error, element) {
+            $(element).parents('.form-group').append(error);
+        }
+    });
+});
 </script>
 </body>
 </html>

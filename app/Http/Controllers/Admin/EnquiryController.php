@@ -10,7 +10,7 @@ class EnquiryController extends Controller
 {
     public function index()
     {
-        $enquiries = EnquiryData::get();
+        $enquiries = EnquiryData::orderBy('id','desc')->get();
         return view('enquirylist',compact('enquiries'));
     }
 }

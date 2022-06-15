@@ -149,7 +149,10 @@
         color: #fff;
     }
     .dataTables_filter{
-        float: right;
+        /* float: right; */
+    }
+    div.dataTables_wrapper div.dataTables_filter {
+    text-align: center !important;
     }
     .btn.btn-sm {
     min-width: 6rem !important;

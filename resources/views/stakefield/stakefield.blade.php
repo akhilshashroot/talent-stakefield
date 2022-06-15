@@ -44,6 +44,7 @@
     }
     .p-class{
         color:#fff;
+        text-align:center;
     }
     #footer {
             position: fixed;
@@ -387,7 +388,7 @@ $(function () {
         processing: true,
         serverSide: true,
         scrollX: true,
-        "pageLength": 10,
+        "pageLength": 25,
         ajax: {
           url: "{{ route('customsearch.index') }}",
           data: function (d) {
@@ -445,7 +446,7 @@ $(function () {
         clicks += 1;
        // console.log(clicks)
         var add_id = $(this).attr('data-id');
-        document.getElementById("footer").innerHTML = "<span class='p-class'>you selected " +clicks+ " profile</span> <a  class='btn btn-primary btn-sm' style='float:right;color:#fff;' id='passingID'>Enquiry Now</a>";
+        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles  <a  class='btn btn-primary btn-sm' style='color:#fff;left: 20px;' id='passingID'>Enquiry Now</a></div>";
         $('#footer').show();
         //alert(add_id);
         val.push( $(this).data('id') );
@@ -472,7 +473,7 @@ $(function () {
 
       // console.log(val);
         $("#idkl").val( val );
-        document.getElementById("footer").innerHTML = "<span class='p-class'>you selected " +clicks+ " profile</span> <a  class='btn btn-primary btn-sm' style='float:right;color:#fff;' id='passingID'>Enquiry Now</a>";
+        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles  <a  class='btn btn-primary btn-sm' style='color:#fff;left:20px;' id='passingID'>Enquiry Now</a></div> ";
         if( clicks==0){
             $('#footer').hide();
 

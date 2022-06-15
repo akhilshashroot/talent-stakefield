@@ -164,11 +164,11 @@ thead {
         <tr>
           <th scope="col">#</th>
           <th scope="col">Talent ID</th>
-          <th scope="col">Skillset </th>
+          <th scope="col" style="width:30%;">Skillset </th>
           <th scope="col">Experience </th>
-          <th scope="col">Turnaround time</th>
+          <th scope="col">TAT</th>
           <th scope="col">Availability </th>
-          <th scope="col">Rate </th>
+          <th scope="col">Rate(USD) </th>
           <th scope="col">Action </th>
            
         </tr>

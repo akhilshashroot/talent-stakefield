@@ -23,7 +23,7 @@ class EnquiryController extends Controller
         $data=array();
         $data['name']    		= $request->name;
         $data['email'] 		=  $request->email;
-        $data['subject'] 		=  'Enquiry';
+        $data['subject'] 		=  'Talent Enquiry';
         $data['phone'] 		=  $request->phone;
         
         $user_ids=explode(",",$request->idkl);

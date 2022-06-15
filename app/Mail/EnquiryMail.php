@@ -35,8 +35,8 @@ class EnquiryMail extends Mailable
         Phone :</b> ".$data['phone']."<br/><br/><b>
         Message : </b>".$data['message']."<br/><br/><b>";
         $subject  = $data['subject'];
-        $to_address="info@hashroot.com";
-        return $this->to($to_address)->from($data['email'], 'Talent Enquiry')
+        $to_address="akhil.s@hashroot.com";
+        return $this->to($to_address)->from('site@stakefield.com', 'Talent Enquiry')
         ->subject($subject)
         ->html($message_content);
     }

@@ -56,7 +56,7 @@ class EmployeeController extends Controller
         $user->name = $validated['name'];
         $user->email = $validated['email'];
         $user->phone = $validated['phone'];
-        $user->skill_set = $validated['skillset'];
+        $user->skill_set = preg_replace('/(?<!,) {2,}/', ' ', $validated['skillset']);
         $user->experience = $validated['experience'];
         $user->turnaround_time = $validated['time'];
         $user->availability = $validated['availability'];

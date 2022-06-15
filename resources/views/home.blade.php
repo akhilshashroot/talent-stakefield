@@ -41,7 +41,7 @@
                                     <th>Experience</th>
                                     <th>Turnaround time</th>
                                     <th>Availability</th>
-                                    <th>Rate</th>
+                                    <th>Rate(USD)</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -142,7 +142,7 @@
                               </div>
                             </div>
                             <div class="form-group">
-                            <label class="form-label">Rate</label>
+                            <label class="form-label">Rate(USD)</label>
                                 <div class="form-line">
                                     <input type="text" class="form-control" name="rate" id="rate" placeholder="Enter employee rate" required>
                                </div>

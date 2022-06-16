@@ -119,4 +119,10 @@ class EmployeeController extends Controller
   
         return back();
     }
+    public function delete($id)
+    {
+        StakefieldUser::find($id)->delete();
+  
+        return back();
+    }
 }

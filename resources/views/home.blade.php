@@ -68,12 +68,10 @@
                                     <td>{{$employee->turnaround_time}}</td>
                                     <td>{{$employee->availability}}</td>
                                     <td>{{$employee->rate}}</td>
-                                    <td><button type="button" class="" onclick="editfn({{$employee->id}})"><i class='fas fa-edit'></i></button>
-                                    <form method="POST" action="{{ route('employee.destroy', $employee->id) }}">
-                            @csrf
-                            <input name="_method" type="hidden" value="DELETE">
-                            <button type="submit" class="show_confirm" data-toggle="tooltip" title='Delete'><i class='fas fa-trash'></i></button>
-                        </form></td>
+                                    <td>
+                                        <a class="btn btn-primary" onclick="editfn({{$employee->id}})" href="javascript:void('0')"><i class="fa fa-edit"></i></a>
+                                        <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{route('employee_delete', $employee->id)}}"><i class="fa fa-trash"></i></a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

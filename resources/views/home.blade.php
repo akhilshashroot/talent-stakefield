@@ -33,7 +33,7 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <table class="table table-bordered table-striped table-hover dataTable">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -70,10 +70,10 @@
                                     <td>{{$employee->rate}}</td>
                                     <td><button type="button" class="btn btn-raised btn-primary waves-effect" onclick="editfn({{$employee->id}})"><i class='fas fa-edit'></i></button>
                                     <form method="POST" action="{{ route('employee.destroy', $employee->id) }}">
-                            @csrf
-                            <input name="_method" type="hidden" value="DELETE">
-                            <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'><i class='fas fa-trash'></i></button>
-                        </form></td>
+                                    @csrf
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete' style="float:left"><i class='fas fa-trash'></i></button>
+                                    </form></td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -97,9 +97,15 @@
                     @csrf
                     <input type="hidden" name="userid" id="userid" value="">
                             <div class="form-group">
+                            <label class="form-label">Talent ID</label>
+                                <div class="form-line">
+                                    <input type="text" class="form-control" name="talentid" id="talentid" placeholder="Enter Talent Id" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
                             <label class="form-label">Employee Name</label>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter Employee name" required>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter Employee name">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -112,12 +118,6 @@
                             <label class="form-label">Phone No</label>
                                 <div class="form-line">
                                     <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Employee phone">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                            <label class="form-label">Talent ID</label>
-                                <div class="form-line">
-                                    <input type="text" class="form-control" name="talentid" id="talentid" placeholder="Enter Talent Id" required>
                                 </div>
                             </div>
                             <div class="form-group">

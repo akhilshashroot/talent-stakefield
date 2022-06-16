@@ -20,7 +20,7 @@
                         <h2> Enquiry List </h2>
                     </div>
                     <div class="body">
-                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <table class="table table-bordered table-striped table-hover dataTable">
                             <thead>
                                 <tr>
                                     <th>#</th>

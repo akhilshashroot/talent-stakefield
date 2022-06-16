@@ -37,7 +37,7 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required',
+            'name' => 'nullable',
             'email' => 'nullable',
             'phone' => 'nullable',
             'skillset' => 'required',

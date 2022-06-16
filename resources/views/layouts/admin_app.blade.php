@@ -16,7 +16,7 @@
 <link  rel="stylesheet" href="{{asset('css/main.css')}}">
 <link rel="stylesheet" href="{{asset('css/color_skins.css')}}">
 </head>
-<body class="theme-orange">
+<body class="theme-blush">
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">        
@@ -96,7 +96,7 @@
 @csrf.
 <button type="submit"><i class="zmdi zmdi-power"></i></button>
 </form></li>
-            <li class=""><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
+            <li class=""><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"></a></li>
         </ul>
     </div>
 </nav>

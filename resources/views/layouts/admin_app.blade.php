@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 
-<title>:: Hashroot :: Enquiry</title>
+<title>Stakefield </title>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <!-- Favicon-->
 <link rel="stylesheet" href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}">
@@ -42,7 +42,7 @@
         
         <div class="navbar-header">
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="{{route('home')}}">Hashroot-Enquiry</a>
+            <a class="navbar-brand" href="{{route('home')}}">Stakefield Talents</a>
         </div>
 
         <ul class="nav navbar-nav navbar-left">
@@ -108,7 +108,7 @@
         <div class="image"> <img src="{{asset('images/xs/avatar1.jpg')}}" width="48" height="48" alt="User" /> </div>
         <div class="info-container">
             <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Admin User</div>
-            <div class="email">admin@yopmail.com</div>
+            <div class="email">{{{ isset(Auth::user()->email) ? Auth::user()->email : Auth::user()->email }}}</div>
             <div class="btn-group user-helper-dropdown"> <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="button"> keyboard_arrow_down </i>
                 <ul class="dropdown-menu pull-right">
                     <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>

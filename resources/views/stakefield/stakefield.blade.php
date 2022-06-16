@@ -75,19 +75,19 @@
     background-color: #373838 !important;
     color: #fff !important;
     }
-    ::-webkit-input-placeholder {
+    div.dataTables_wrapper div.dataTables_filter input::-webkit-input-placeholder {
    text-align: center;
     }
     
-    :-moz-placeholder { /* Firefox 18- */
+    div.dataTables_wrapper div.dataTables_filter input::-moz-placeholder { /* Firefox 18- */
        text-align: center;  
     }
     
-    ::-moz-placeholder {  /* Firefox 19+ */
+    div.dataTables_wrapper div.dataTables_filter input::-moz-placeholder {  /* Firefox 19+ */
        text-align: center;  
     }
     
-    :-ms-input-placeholder {  
+    div.dataTables_wrapper div.dataTables_filter input:-ms-input-placeholder {  
        text-align: center; 
     }
     @media only screen and (min-width: 991px) {
@@ -184,7 +184,7 @@
   border-color: #928d8d  !important;
 
   } */
-   .btn.new,.checker,.remover
+   .btn.new,.checker,.remover,.w-100
   {
   background-color:#000000  !important;
   border-color: #000000  !important;

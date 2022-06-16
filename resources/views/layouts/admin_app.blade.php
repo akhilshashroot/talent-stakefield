@@ -96,7 +96,7 @@
 @csrf.
 <button type="submit"><i class="zmdi zmdi-power"></i></button>
 </form></li>
-            <li class=""><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"></a></li>
+            <li class=""><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
         </ul>
     </div>
 </nav>

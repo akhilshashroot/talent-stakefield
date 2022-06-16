@@ -36,6 +36,7 @@
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>Talent ID</th>
                                     <th>Skillset</th>
                                     <th>Experience</th>
@@ -47,6 +48,7 @@
                             </thead>
                             <tfoot>
                                 <tr>
+                                    <th>#</th>
                                     <th>Talent ID</th>
                                     <th>Skillset</th>
                                     <th>Experience</th>
@@ -59,6 +61,7 @@
                             <tbody>
                                 @foreach($employees as $employee)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{$employee->employee_id}}</td>
                                     <td>{{$employee->skill_set}}</td>
                                     <td>{{$employee->experience}}</td>

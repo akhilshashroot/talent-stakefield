@@ -23,6 +23,7 @@
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>Client Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
@@ -31,6 +32,7 @@
                             </thead>
                             <tfoot>
                                 <tr>
+                                    <th>#</th>
                                     <th>Client Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
@@ -40,6 +42,7 @@
                             <tbody>
                                 @foreach($enquiries as $list)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{$list->name}}</td>
                                     <td>{{$list->email}}</td>
                                     <td>{{$list->phone}}</td>

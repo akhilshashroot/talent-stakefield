@@ -327,6 +327,7 @@
 <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
 <!-- Vendor Scripts -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LclZpccAAAAAKwoCySfICyu7RkiM3jxrCpEKIaq"></script>
 <script src="{{asset('stakefield/vendors/tether/dist/js/tether.min.js')}}"></script>
 <script src="{{asset('stakefield/vendors/bootstrap/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('stakefield/vendors/stellar/jquery.stellar.min.js')}}"></script>
@@ -596,7 +597,7 @@ $(function () {
         $("#submit"). attr("disabled", false);
         //alert('Ajax form has been submitted successfully');
         document.getElementById("contactUsForm").reset(); 
-        swal("Thank you fro contacting us", "success");  
+        swal("Thank you for contacting us", "success");  
         $('#myModal').modal('hide');
          $('body').removeClass('modal-open');
          $('.remover').hide(); 

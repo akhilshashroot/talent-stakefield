@@ -188,6 +188,7 @@
 <script src="{{asset('js/pages/tables/jquery-datatable.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 <script src="{{asset('plugins/jquery-validation/jquery.validate.js')}}"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <script>
     function editfn(id) {
         console.log("hi");

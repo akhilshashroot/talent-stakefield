@@ -149,7 +149,7 @@
                             <div class="form-group">
                             <label class="form-label">Availability</label>
                                 <div class="form-line">
-                                <select name="" class="selectpicker">
+                                <select name="availability" id="availability" class="selectpicker">
                                      <option  value="">---select----</option>
                                      <option value="Full-time">Full-time</option>
                                      <option value="Part-time">Part-time</option>

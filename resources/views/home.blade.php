@@ -68,11 +68,11 @@
                                     <td>{{$employee->turnaround_time}}</td>
                                     <td>{{$employee->availability}}</td>
                                     <td>{{$employee->rate}}</td>
-                                    <td><button type="button" class="btn btn-raised btn-primary waves-effect" onclick="editfn({{$employee->id}})"><i class='fas fa-edit'></i></button>
+                                    <td><button type="button" class="" onclick="editfn({{$employee->id}})"><i class='fas fa-edit'></i></button>
                                     <form method="POST" action="{{ route('employee.destroy', $employee->id) }}">
                             @csrf
                             <input name="_method" type="hidden" value="DELETE">
-                            <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'><i class='fas fa-trash'></i></button>
+                            <button type="submit" class="show_confirm" data-toggle="tooltip" title='Delete'><i class='fas fa-trash'></i></button>
                         </form></td>
                                 </tr>
                                 @endforeach

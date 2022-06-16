@@ -5,7 +5,9 @@
     width: 200px;
     margin-left: 25px;
   }
-
+  .dataTables_length{
+    display:none;
+  }
   .w3-container{
     padding: 4rem;
     position: relative;

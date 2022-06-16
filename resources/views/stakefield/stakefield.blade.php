@@ -48,6 +48,10 @@
     }
     div.dataTables_wrapper div.dataTables_filter input{
         width: 230px !important;
+        border-color: #b8b8b8 !important;
+        background-color: transparent;
+        resize: none;
+        outline: none;
     }
     #footer {
             position: fixed;
@@ -71,7 +75,21 @@
     background-color: #373838 !important;
     color: #fff !important;
     }
-
+    ::-webkit-input-placeholder {
+   text-align: center;
+    }
+    
+    :-moz-placeholder { /* Firefox 18- */
+       text-align: center;  
+    }
+    
+    ::-moz-placeholder {  /* Firefox 19+ */
+       text-align: center;  
+    }
+    
+    :-ms-input-placeholder {  
+       text-align: center; 
+    }
     @media only screen and (min-width: 991px) {
         .main-header.header-white.transparent .navbar .navbar-nav>li>a {
             color: #000;
@@ -160,6 +178,18 @@
     .btn.btn-sm {
     min-width: 6rem !important;
 }
+  /* .btn:hover
+  {
+  background-color:#928d8d  !important;
+  border-color: #928d8d  !important;
+
+  } */
+   .btn.new,.checker,.remover
+  {
+  background-color:#000000  !important;
+  border-color: #000000  !important;
+
+  }
 </style>
 
 <body class="white-overlay">
@@ -432,7 +462,7 @@ $(function () {
   
    // $('#filterTable_filter').before('<div id="theAppendedDiv">The Appended Div<div>')
 
-   $(".dataTables_filter").prepend('<select name="profile_data_field" id="approved" style="padding: 8px;width: 172px;border-block-color: #292b2c;"> <option value="">--Select--</option><option value="employee_id">Talent ID</option> <option value="skill_set"> Skillset </option> <option value="experience">Experience</option> <option value="turnaround_time"> Turnaround time </option> <option value="availability"> Availability </option> <option value="rate"> Rate </option> </select>&nbsp;&nbsp;');
+   $(".dataTables_filter").prepend('');
     // Append an element with ID container
   
 });
@@ -458,7 +488,7 @@ $(function () {
         clicks += 1;
        // console.log(clicks)
         var add_id = $(this).attr('data-id');
-        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles  <a  class='btn btn-primary btn-sm' style='color:#fff;left: 20px;' id='passingID'>Enquiry Now</a></div>";
+        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles  <a  class='btn btn-primary btn-sm new' style='color:#fff;left: 20px;' id='passingID'>Enquiry Now</a></div>";
         $('#footer').show();
         //alert(add_id);
         val.push( $(this).data('id') );
@@ -485,7 +515,7 @@ $(function () {
 
       // console.log(val);
         $("#idkl").val( val );
-        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles  <a  class='btn btn-primary btn-sm' style='color:#fff;left:20px;' id='passingID'>Enquiry Now</a></div> ";
+        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles  <a  class='btn btn-primary btn-sm new' style='color:#fff;left:20px;' id='passingID'>Enquiry Now</a></div> ";
         if( clicks==0){
             $('#footer').hide();
 

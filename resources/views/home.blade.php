@@ -1,5 +1,15 @@
 @extends('layouts.admin_app')
 @section('content')
+<style>
+    .btn-default{
+        display:none;
+    }
+    select {
+    width: 259px !important;
+    height: 34px!important;
+}
+    </style>
+
 <section class="content">
     <div class="block-header">
         <div class="row">
@@ -29,7 +39,7 @@
                     <div class="header">
                         <h2> Employee List </h2>
                         <ul class="header-dropdown">
-                        <button type="button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#largeModal" onclick="resetfn()">Add Employee</button>
+                        <button type="button" class="btn  waves-effect m-r-20" data-toggle="modal" data-target="#largeModal" onclick="resetfn()">Add Employee</button>
                         </ul>
                     </div>
                     <div class="body">
@@ -139,7 +149,12 @@
                             <div class="form-group">
                             <label class="form-label">Availability</label>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="availability" id="availability" placeholder="Enter availability" required>
+                                <select name="" class="selectpicker">
+                                     <option  value="">---select----</option>
+                                     <option value="Full-time">Full-time</option>
+                                     <option value="Part-time">Part-time</option>
+                                </select>
+
                               </div>
                             </div>
                             <div class="form-group">

@@ -37,11 +37,11 @@ class EnquiryController extends Controller
         $save->name = $request->name;
         $save->email = $request->email;
         $save->phone = $request->phone;
-        $save->employee_id = implode(",",$talent_id);
+        $save->employee_id = implode(",      ",$talent_id);
         $save->save();
       //  Log::info( $talent_id);
 
-        $data['message']		=  'There is an enquiry for Talent Id -'.implode(",",$talent_id);
+        $data['message']		=  'There is an enquiry for Talent Id -'.implode(",      ",$talent_id);
      //   try {
            Mail::send(new EnquiryMail($data));
           //  $er['stat'] = 1;

@@ -16,7 +16,7 @@
 <link  rel="stylesheet" href="{{asset('css/main.css')}}">
 <link rel="stylesheet" href="{{asset('css/color_skins.css')}}">
 </head>
-<body class="theme-orange">
+<body class="theme-blush">
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">        
@@ -188,7 +188,7 @@
 <script src="{{asset('js/pages/tables/jquery-datatable.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 <script src="{{asset('plugins/jquery-validation/jquery.validate.js')}}"></script>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="{{asset('js/fontadmin.js')}}" crossorigin='anonymous'></script>
 <script>
     function editfn(id) {
         console.log("hi");

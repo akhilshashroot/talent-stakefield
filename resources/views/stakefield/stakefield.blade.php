@@ -46,6 +46,9 @@
         color:#fff;
         text-align:center;
     }
+    div.dataTables_wrapper div.dataTables_filter input{
+        width: 230px !important;
+    }
     #footer {
             position: fixed;
             padding: 10px 10px 0px 10px;
@@ -393,6 +396,11 @@ $(function () {
         serverSide: true,
         scrollX: true,
         "pageLength": 25,
+        language: {
+        searchPlaceholder: "Search profiles",
+        search: "",
+
+    },
         ajax: {
           url: "{{ route('customsearch.index') }}",
           data: function (d) {
@@ -424,7 +432,7 @@ $(function () {
   
    // $('#filterTable_filter').before('<div id="theAppendedDiv">The Appended Div<div>')
 
-   $(".dataTables_filter").prepend('<select name="profile_data_field" id="approved" style="padding: 5px;"> <option value="">--Select--</option><option value="employee_id">Talent ID</option> <option value="skill_set"> Skillset </option> <option value="experience">Experience</option> <option value="turnaround_time"> Turnaround time </option> <option value="availability"> Availability </option> <option value="rate"> Rate </option> </select>&nbsp;');
+   $(".dataTables_filter").prepend('<select name="profile_data_field" id="approved" style="padding: 8px;width: 172px;border-block-color: #292b2c;"> <option value="">--Select--</option><option value="employee_id">Talent ID</option> <option value="skill_set"> Skillset </option> <option value="experience">Experience</option> <option value="turnaround_time"> Turnaround time </option> <option value="availability"> Availability </option> <option value="rate"> Rate </option> </select>&nbsp;&nbsp;');
     // Append an element with ID container
   
 });

@@ -79,8 +79,8 @@
                                     <td>{{$employee->availability}}</td>
                                     <td>{{$employee->rate}}</td>
                                     <td>
-                                        <a class="btn btn-primary" onclick="editfn({{$employee->id}})" href="javascript:void('0')"><i class="fa fa-edit"></i></a>
-                                        <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{route('employee_delete', $employee->id)}}"><i class="fa fa-trash"></i></a>
+                                        <a class="" onclick="editfn({{$employee->id}})" href="javascript:void('0')"><i class="fa fa-edit"></i></a>||
+                                        <a class="" onclick="return confirm('Are you sure?')" href="{{route('employee_delete', $employee->id)}}"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

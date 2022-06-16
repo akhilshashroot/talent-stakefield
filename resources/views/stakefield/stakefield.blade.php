@@ -439,7 +439,7 @@ $(function () {
             }
         },
         columns: [
-            { data: 'rank', DT_RowIndex: 'rank',  searchable: false },
+            { data: 'DT_RowIndex', DT_RowIndex: 'DT_RowIndex',  orderable: false, searchable: false },
             {data: 'employee_id', name: 'employee_id'},
             {data: 'skill_set', name: 'skill_set'},
             {data: 'experience', name: 'experience'},

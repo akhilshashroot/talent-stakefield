@@ -1,5 +1,13 @@
 @extends('layouts.admin_app')
 @section('content')
+<style>
+    .btn-group{
+        display:none;
+    }
+ 
+
+    </style>
+
 <section class="content">
     <div class="block-header">
         <div class="row">

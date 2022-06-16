@@ -12,8 +12,7 @@ class CustomSearchController extends Controller
     {
         if ($request->ajax()) {
             DB::statement(DB::raw('set @rownum=0'));
-            $data = StakefieldUser::select(DB::raw('@rownum := 0 r'))
-            ->select(DB::raw('@rownum := @rownum + 1 AS rank'),'stakefield_users.*');
+            $data = StakefieldUser::select(  DB::raw('@rownum  := @rownum  + 1 AS rownum'),'stakefield_users.*')->orderby('stakefield_users.id','desc');
             return Datatables::of($data)
                     ->addIndexColumn()
                     

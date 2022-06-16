@@ -1,7 +1,7 @@
 @extends('layouts.admin_app')
 @section('content')
 <style>
-    .btn-default{
+    .btn-default,.btn-group{
         display:none;
     }
     select {

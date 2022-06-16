@@ -1,13 +1,10 @@
 @extends('layouts.admin_app')
 @section('content')
 <style>
-    .btn-default,.btn-group{
+    .btn-default,.dt-buttons{
         display:none;
     }
-    select {
-    width: 259px !important;
-    height: 34px!important;
-}
+  
     </style>
 
 <section class="content">
@@ -148,14 +145,14 @@
                             </div>
                             <div class="form-group">
                             <label class="form-label">Availability</label>
-                                <div class="form-line">
-                                <select name="availability" id="availability" class="selectpicker">
-                                     <option  value="">---select----</option>
-                                     <option value="Full-time">Full-time</option>
-                                     <option value="Part-time">Part-time</option>
+                          
+                                <select  name="availability" id="availability" class="form-control show-tick">
+                                    <option value="">-- Please select --</option>
+                                    <option value="Full-Time">Full-Time</option>
+                                    <option value="Part-Time">Part-Time</option>
+                                  
                                 </select>
-
-                              </div>
+                         
                             </div>
                             <div class="form-group">
                             <label class="form-label">Rate(USD)</label>

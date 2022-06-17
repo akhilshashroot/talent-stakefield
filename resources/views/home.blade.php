@@ -4,7 +4,9 @@
     .btn-default,.dt-buttons{
         display:none;
     }
-  
+  .delete-color{
+    color: #f11414;
+  }
     </style>
 
 <section class="content">
@@ -47,7 +49,7 @@
                                     <th>Talent ID</th>
                                     <th>Skillset</th>
                                     <th>Experience</th>
-                                    <th>Turnaround time</th>
+                                    <th>TAT</th>
                                     <th>Availability</th>
                                     <th>Rate(USD)</th>
                                     <th>Action</th>
@@ -59,7 +61,7 @@
                                     <th>Talent ID</th>
                                     <th>Skillset</th>
                                     <th>Experience</th>
-                                    <th>Turnaround time</th>
+                                    <th>TAT</th>
                                     <th>Availability</th>
                                     <th>Rate</th>
                                     <th>Action</th>
@@ -76,8 +78,8 @@
                                     <td>{{$employee->availability}}</td>
                                     <td>{{$employee->rate}}</td>
                                     <td>
-                                        <a class="" onclick="editfn({{$employee->id}})" href="javascript:void('0')"><i class="fa fa-edit"></i></a>||
-                                        <a class="" href="javascript:void(0);" data-toggle="modal" data-target="#deleteModal" onclick="deletefn({{$employee->id}})"><i class="fa fa-trash"></i></a>
+                                        <a class="" onclick="editfn({{$employee->id}})" href="javascript:void('0')"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;
+                                        <a class="delete-color" href="javascript:void(0);" data-toggle="modal" data-target="#deleteModal" onclick="deletefn({{$employee->id}})"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

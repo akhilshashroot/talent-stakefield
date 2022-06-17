@@ -39,6 +39,9 @@
 
 </head>
 <style>
+    .new-h a:hover {
+    background: blue;
+     }  
     .parallax:before {
         background: none;
     }
@@ -48,8 +51,7 @@
     }
     div.dataTables_wrapper div.dataTables_filter input{
         width: 230px !important;
-        border-color: #b8b8b8 !important;
-        background-color: transparent;
+        border: 2px solid #a0a1a5!important;
         resize: none;
         outline: none;
     }
@@ -72,7 +74,7 @@
         color:red;
     }
     .tdhcc {
-    background-color: #373838 !important;
+    background-color: #55565b !important;
     color: #fff !important;
     }
     div.dataTables_wrapper div.dataTables_filter input::-webkit-input-placeholder {
@@ -178,16 +180,22 @@
     .btn.btn-sm {
     min-width: 6rem !important;
 }
-  /* .btn:hover
-  {
-  background-color:#928d8d  !important;
-  border-color: #928d8d  !important;
-
-  } */
-   .btn.new,.checker,.remover,.w-100
+   .btn:hover
   {
   background-color:#000000  !important;
   border-color: #000000  !important;
+
+  } 
+   .btn.new,.checker,.remover,.w-100,.new
+  {
+  background-color:#55565b ;
+  border-color: #55565b  ;
+
+  }
+  .checker,.remover,.w-100
+  {
+  background-color:#55565b !important;
+  border-color: #55565b  !important;
 
   }
 </style>
@@ -427,7 +435,7 @@ $(function () {
         scrollX: true,
         "pageLength": 25,
         language: {
-        searchPlaceholder: "Search profiles",
+        searchPlaceholder: "Search Profiles",
         search: "",
 
     },
@@ -488,7 +496,7 @@ $(function () {
         clicks += 1;
        // console.log(clicks)
         var add_id = $(this).attr('data-id');
-        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles  <a  class='btn btn-primary btn-sm new' style='color:#fff;left: 20px;' id='passingID'>Enquiry Now</a></div>";
+        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles  <span class='new-h'> <a  class='btn btn-primary btn-sm new' style='color:#fff;left: 20px;' id='passingID'>Enquiry Now</a></span> </div>";
         $('#footer').show();
         //alert(add_id);
         val.push( $(this).data('id') );
@@ -515,7 +523,7 @@ $(function () {
 
       // console.log(val);
         $("#idkl").val( val );
-        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles  <a  class='btn btn-primary btn-sm new' style='color:#fff;left:20px;' id='passingID'>Enquiry Now</a></div> ";
+        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles<span  class='new-h'>  <a  class='btn btn-primary btn-sm new' style='color:#fff;left:20px;' id='passingID'>Enquiry Now</a></span> </div> ";
         if( clicks==0){
             $('#footer').hide();
 

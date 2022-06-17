@@ -146,7 +146,7 @@ thead {
 
 
     <!-- Create the drop down filter -->
-    <h2 class="title custom text-center" id="verified-sec" style="margin-top: 30px;" rel="₹">Talents Pool</h2>
+    <!-- <h2 class="title custom text-center" id="verified-sec" style="margin-top: 30px;" rel="₹">Talents Pool</h2> -->
     <!-- Set up the datatable -->
     <!-- <div class="btn-enquiry">
     <div class="tooltip-wrapper disabled" data-title="Search and select profiles to enable this button">

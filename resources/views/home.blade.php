@@ -71,7 +71,7 @@
                                 @foreach($employees as $employee)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td><a class="" href="javascript:void(0);" data-toggle="modal" data-target="#viewModal" onclick="viewfn({{$employee->employee_id}})">{{$employee->employee_id}}</a></td>
+                                    <td><a class="" href="javascript:void(0);" data-toggle="modal" data-target="#viewModal" onclick="viewfn('{{$employee->employee_id}}')">{{$employee->employee_id}}</a></td>
                                     <td>{{$employee->skill_set}}</td>
                                     <td>{{$employee->experience}}</td>
                                     <td>{{$employee->turnaround_time}}</td>

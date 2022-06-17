@@ -98,7 +98,7 @@
                 <h4 class="modal-title" id="largeModalLabel">Add Employee</h4>
             </div>
             <div class="modal-body">
-                <form id="employee_add" method="POST" action="{{route('employee.store')}}">
+                <form id="form_validation"  method="POST" action="{{route('employee.store')}}">
                     @csrf
                     <input type="hidden" name="userid" id="userid" value="">
                             <div class="form-group">
@@ -146,7 +146,7 @@
                             <div class="form-group">
                             <label class="form-label">Availability</label>
                           
-                                <select  name="availability" id="availability" class="form-control show-tick">
+                                <select  name="availability" id="availability" class="form-control show-tick" required>
                                     <option value="">-- Please select --</option>
                                     <option value="Full-Time">Full-Time</option>
                                     <option value="Part-Time">Part-Time</option>

@@ -184,6 +184,11 @@
 <script src="{{asset('plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
 <script src="{{asset('plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
 
+<script src="{{asset('plugins/jquery-validation/jquery.validate.js')}}"></script> <!-- Jquery Validation Plugin Css --> 
+<script src="{{asset('plugins/jquery-steps/jquery.steps.js')}}"></script> <!-- JQuery Steps Plugin Js --> 
+
+<script src="{{asset('js/pages/forms/form-validation.js')}}"></script> 
+
 <script src="{{asset('bundles/mainscripts.bundle.js')}}"></script><!-- Custom Js --> 
 <script src="{{asset('js/pages/tables/jquery-datatable.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
@@ -241,7 +246,7 @@
           });
       });
       function resetfn() {
-        $('#employee_add').trigger("reset");
+        $('#form_validation').trigger("reset");
         $('#userid').val('');
       }
       $(function () {

@@ -66,7 +66,9 @@ thead {
 }
 
 @media only screen and (max-width: 767px) {
-  
+  .grecaptcha-badge{
+        display:none !important;
+        }
   /* Force table to not be like tables anymore */
   table,
   thead,

@@ -39,6 +39,15 @@
 
 </head>
 <style>
+    .swal2-popup .swal2-styled.swal2-confirm {
+
+    background-color: #55565b !important;
+   }
+
+   div.dataTables_wrapper div.dataTables_processing {
+
+    top: 80% !important;
+   }
     .new-h a:hover {
     background: blue;
      }  
@@ -62,7 +71,7 @@
             width: 100%;
             /* Height of the footer*/ 
             height: 60px;
-            background: grey;
+            background: #d67a7a;
         }
     .paging_simple_numbers{
         text-align: right;
@@ -93,6 +102,7 @@
        text-align: center; 
     }
     @media only screen and (min-width: 991px) {
+      
         .main-header.header-white.transparent .navbar .navbar-nav>li>a {
             color: #000;
         }
@@ -496,7 +506,7 @@ $(function () {
         clicks += 1;
        // console.log(clicks)
         var add_id = $(this).attr('data-id');
-        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles  <span class='new-h'> <a  class='btn btn-primary btn-sm new' style='color:#fff;left: 20px;' id='passingID'>Enquiry Now</a></span> </div>";
+        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles  <span class='new-h'> <a  class='btn btn-primary btn-sm new' style='color:#fff;left: 20px;' id='passingID'>Enquire Now</a></span> </div>";
         $('#footer').show();
         //alert(add_id);
         val.push( $(this).data('id') );
@@ -523,7 +533,7 @@ $(function () {
 
       // console.log(val);
         $("#idkl").val( val );
-        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles<span  class='new-h'>  <a  class='btn btn-primary btn-sm new' style='color:#fff;left:20px;' id='passingID'>Enquiry Now</a></span> </div> ";
+        document.getElementById("footer").innerHTML = "<div class='p-class'>You have selected " +clicks+ " profiles<span  class='new-h'>  <a  class='btn btn-primary btn-sm new' style='color:#fff;left:20px;' id='passingID'>Enquire Now</a></span> </div> ";
         if( clicks==0){
             $('#footer').hide();
 

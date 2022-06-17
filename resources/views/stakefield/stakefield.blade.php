@@ -43,7 +43,12 @@
 
     background-color: #55565b !important;
    }
-
+   .bg-dark {
+    background: #d67a7a  !important;
+  }
+  .text-light{
+    color:#fff;
+  }
    div.dataTables_wrapper div.dataTables_processing {
 
     top: 80% !important;
@@ -122,15 +127,16 @@
 
 
     .main-title2 {
-        letter-spacing: 2px;
-        font-weight: 500;
-        font-size: 96px;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+        font-size: 3rem;
         white-space: normal;
     }
 
     .res-background {
-        background-image: url(stakefield/img/Home-3.webp);
+        background-image: url(stakefield/img/Banner1.png);
         background-size: cover;
+        background-position: 46% 0;
         /* background-position: top !important; */
     }
 
@@ -148,14 +154,14 @@
         .main-title2 {
             letter-spacing: 1px;
             font-weight: 600;
-            font-size: 47px;
+            font-size: 16px;
             white-space: normal;
         }
 
         .res-background {
-            background-image: url(stakefield/img/Home-3.webp);
+            background-image: url(stakefield/img/Banner1.png);
             background-size: cover;
-            background-position: 67% 0% !important;
+            background-position: 72% 0% !important;
         }
     }
 
@@ -208,6 +214,22 @@
   border-color: #55565b  !important;
 
   }
+  table.dataTable td, table.dataTable th {
+   
+    font-weight: 500 !important;
+  }
+
+  @media only screen and (min-width: 767px){
+    .fullscreen-bg {
+    min-height: 70vh;
+    max-height: 100vh;
+}
+  }
+
+.fullscreen-bg {
+    height: 70vh;
+}
+ 
 </style>
 
 <body class="white-overlay">
@@ -323,17 +345,21 @@
                     <div class=" fullscreen-bg  parallax res-background" data-stellar-background-ratio="0.55">
                         <div class="centered centered-wrap  text-left">
                             <div class="container mt-5">
-                                <div class="visual-text visual-center pt-5 ">
-                                    <h6 class="main-title1 banner-color pt-5">PEOPLE . POWER , FUTURE</h6>
-                                    <h1 class="main-title2 banner-color">SOURCING</h1>
+                                <!-- <div class="visual-text visual-center pt-5 "> -->
+                                    <h2 class="main-title2 banner-color pt-5">Remote hiring has never  <br>  been easier.</h2>
+                                    <!-- <h6 class="main-title2 banner-color">Remote hiring has never been easier.</h3> -->
+
+                                    <!-- <h1 class="main-title2 banner-color">Hire the best remote talents through Stakefield.</h1> -->
                                     <p class="banner-color">
-                                        the best talents for the best companies in the world
+                                    Hire the best remote talents through Stakefield.
                                     </p>
                                     <a class="btn button-touch has-radius-small mt-3" href="{{env('STAKE_URL')}}/contact-us">GET IN
                                         TOUCH</a>
 
 
-                                </div>
+                                <!-- </div> -->
+                                 
+                         
                             </div>
                         </div>
                     </div>
@@ -369,7 +395,7 @@
 <div id="footer" style="display:none;">
                 
 </div>
-<a href="#" class="section-scroll" id="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+<!-- <a href="#" class="section-scroll" id="scroll-to-top"><i class="fa fa-angle-up"></i></a> -->
 
 <!-- jQuery Library -->
 <!-- jQuery Library -->
@@ -469,7 +495,7 @@ $(function () {
             
         ]
     });
-  
+  // hello();
     $('#approved').change(function(){
         table.draw();
     });
@@ -485,7 +511,9 @@ $(function () {
   
 });
 </script>
+
 <script type="text/javascript">
+   window.onload = window.localStorage.clear();
 
     $(document).on('click','#passingID',function(e) {
 
@@ -501,6 +529,7 @@ $(function () {
     });
   let clicks = 0;
   let val = [];
+
   let array1 = [];
     $(document).on('click','.checker',function(e) {
         clicks += 1;
@@ -514,6 +543,8 @@ $(function () {
         $("#idkl").val( val );
         $('#add-'+add_id).hide();
         $('#'+add_id).show();
+        localStorage.setItem("add", val);
+
    });
 
    $(document).on('click','.remover',function(e) {
@@ -540,12 +571,53 @@ $(function () {
         }else{
             $('#footer').show();
         }
-       
+               localStorage.setItem("add", val);
+
         //alert(add_id);
         $('#add-'+remove_id).show();
         $('#'+remove_id).hide();
    });
-    // var clicks = 0;
+
+   $(document).ready(function(){
+  $(document).mousemove(function(event){
+    var data_s=localStorage.getItem("add"); 
+    if(data_s){
+        var split_string = data_s.split(",");
+        for (let i = 0; i < split_string.length; i++) {
+            $('#add-'+split_string[i]).hide();
+           $('#'+split_string[i]).show();
+          } 
+    } 
+   
+         });
+
+    });
+    $(document).ready(function(){
+  $(document).keypress(function(event){
+
+    var data_s=localStorage.getItem("add"); 
+    if(data_s){
+        var split_string = data_s.split(",");
+        for (let i = 0; i < split_string.length; i++) {
+            $('#add-'+split_string[i]).hide();
+           $('#'+split_string[i]).show();
+          } 
+    } 
+
+        });
+
+    });
+    var intervalId = window.setInterval(function(){
+        var data_s=localStorage.getItem("add"); 
+    if(data_s){
+        var split_string = data_s.split(",");
+        for (let i = 0; i < split_string.length; i++) {
+            $('#add-'+split_string[i]).hide();
+           $('#'+split_string[i]).show();
+          } 
+    } 
+    }, 500);
+     // var clicks = 0;
 
     //   function onClick() {
     //     clicks += 1;
@@ -656,9 +728,11 @@ $(function () {
         swal("Thank you for contacting us", "success");  
         $('#myModal').modal('hide');
          $('body').removeClass('modal-open');
+         window.onload = window.localStorage.clear();
          $('.remover').hide(); 
          $('#footer').hide();
          $('.checker').show(); 
+
           clicks = 0; 
           val = [];
          

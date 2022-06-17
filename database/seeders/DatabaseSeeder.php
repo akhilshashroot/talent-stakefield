@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $availability = $faker->randomElement(['full-time', 'part-time']);
         $skill_set = $faker->randomElement(['java','python']);
 
-    	foreach (range(1,100) as $index) {
+    	foreach (range(1,10000) as $index) {
             DB::table('stakefield_users')->insert([
                 'name' => $faker->name($availability),
                 'email' => $faker->email,

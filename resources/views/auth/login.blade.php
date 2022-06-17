@@ -15,7 +15,11 @@
     <link rel="stylesheet" href="{{asset('css/authentication.css')}}">
     <link rel="stylesheet" href="{{asset('css/color_skins.css')}}">
 </head>
-
+<style>
+    .theme-orange .authentication .card .header {
+    background: linear-gradient(45deg, #999ca6, #999ca6) !important;
+}
+    </style>
 <body class="theme-orange">
 <div class="authentication">
     <div class="card">

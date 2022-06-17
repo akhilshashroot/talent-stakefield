@@ -127,13 +127,13 @@ thead {
     content: "Experience";
   }
   td:nth-of-type(5):before {
-    content: "Turnaround time";
+    content: "TAT";
   }
   td:nth-of-type(6):before {
     content: "Availability";
   }
   td:nth-of-type(7):before {
-    content: "Rate";
+    content: "Rate (USD)";
   }
   td:nth-of-type(8):before {
     content: "Action";
@@ -172,7 +172,7 @@ thead {
           <th scope="col">Experience </th>
           <th scope="col">TAT</th>
           <th scope="col">Availability </th>
-          <th scope="col">Rate(USD) </th>
+          <th scope="col">Rate (USD) </th>
           <th scope="col">Action </th>
            
         </tr>

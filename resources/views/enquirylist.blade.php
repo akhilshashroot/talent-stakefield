@@ -54,7 +54,11 @@
                                     <td>{{$list->name}}</td>
                                     <td>{{$list->email}}</td>
                                     <td>{{$list->phone}}</td>
-                                    <td>{{$list->employee_id}}</td>
+                                    <td>
+                                    @foreach(explode(',', $list->employee_id) as $info) 
+                                    <a class="" href="javascript:void(0);" data-toggle="modal" data-target="#viewModal" onclick="viewfn({{$info}})">{{$info}}</a>,
+                                    @endforeach
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -65,4 +69,7 @@
         </div>
     </div>
 </section>
+@endsection
+@section('modal')
+@include('viewModal')
 @endsection

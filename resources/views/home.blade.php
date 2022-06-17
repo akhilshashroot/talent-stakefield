@@ -69,7 +69,7 @@
                                 @foreach($employees as $employee)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{$employee->employee_id}}</td>
+                                    <td><a class="" href="javascript:void(0);" data-toggle="modal" data-target="#viewModal" onclick="viewfn({{$employee->employee_id}})">{{$employee->employee_id}}</a></td>
                                     <td>{{$employee->skill_set}}</td>
                                     <td>{{$employee->experience}}</td>
                                     <td>{{$employee->turnaround_time}}</td>
@@ -161,11 +161,11 @@
                                </div>
                             </div>
                         </div>
-            <div class="modal-footer">
-                <button class="btn btn-link waves-effect" type="submit" id="submitbtn">SAVE CHANGES</button>
-                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
-                </form>
-            </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-link waves-effect" type="submit" id="submitbtn">SAVE CHANGES</button>
+                            <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                            </form>
+                        </div>
         </div>
     </div>
 </div>
@@ -188,4 +188,5 @@
         </div>
     </div>
 </div>
+@include('viewModal')
 @endsection

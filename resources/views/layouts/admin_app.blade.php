@@ -279,6 +279,33 @@ function deletefn(id) {
     updateurl = updateurl.replace(':id', id);
     $('#deleteform').attr('action', updateurl);
 }
+function viewfn(talentid) {
+        console.log("hi");
+        $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    var url = "{{ route('employee.show', ":talentid") }}";
+    url = url.replace(':talentid', talentid);
+    $.ajax({
+        type: "GET",
+        url: url,
+        dataType: 'json',
+        success: function(res) {
+            console.log(res);
+            $('#empname').val(res.name);
+            $('#empemail').val(res.email);
+            $('#empphone').val(res.phone);
+            $('#empskillset').val(res.skill_set);
+            $('#empexperience').val(res.experience);
+            $('#emptime').val(res.turnaround_time);
+            $('#empavailability').val(res.availability);
+            $('#emprate').val(res.rate);
+            $('#emptalentid').val(res.employee_id);
+        }
+      });
+    }
 </script>
 </body>
 </html>

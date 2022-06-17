@@ -78,9 +78,10 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($talentid)
     {
-        //
+        $employee = StakefieldUser::where('employee_id',$talentid)->first();
+        return response()->json($employee, 200);
     }
 
     /**

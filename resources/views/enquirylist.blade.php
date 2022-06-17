@@ -56,7 +56,7 @@
                                     <td>{{$list->phone}}</td>
                                     <td>
                                     @foreach(explode(',', $list->employee_id) as $info) 
-                                    <a class="" href="javascript:void(0);" data-toggle="modal" data-target="#viewModal" onclick="viewfn({{$info}})">{{$info}}</a>,
+                                    <a class="" href="javascript:void(0);" data-toggle="modal" data-target="#viewModal" onclick="viewfn('{{$info}}')">{{$info}}</a>,
                                     @endforeach
                                     </td>
                                 </tr>

@@ -280,7 +280,8 @@ function deletefn(id) {
     $('#deleteform').attr('action', updateurl);
 }
 function viewfn(talentid) {
-        console.log("hi");
+        console.log(talentid);
+        var talentid = $.trim(talentid);
         $.ajaxSetup({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

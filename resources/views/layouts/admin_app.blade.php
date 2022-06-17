@@ -293,7 +293,13 @@ function viewfn(talentid) {
         url: url,
         dataType: 'json',
         success: function(res) {
-            console.log(res);
+            
+            if(Object.keys(res).length === 0) {
+                console.log(Object.keys(res).length);
+                $("#viewheader").html("<h4 class='modal-title head' id='viewModalLabel'>View Employee <b style='color:red;'>(Removed)</b></h4>");
+            } else {
+                $("#viewheader").html("<h4 class='modal-title head' id='viewModalLabel'>View Employee</h4>");
+            }
             $('#empname').val(res.name);
             $('#empemail').val(res.email);
             $('#empphone').val(res.phone);

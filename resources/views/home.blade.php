@@ -103,65 +103,120 @@
                 <form id="form_validation"  method="POST" action="{{route('employee.store')}}">
                     @csrf
                     <input type="hidden" name="userid" id="userid" value="">
-                            <div class="form-group">
-                            <label class="form-label">Talent ID</label>
-                                <div class="form-line">
+                    <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">                
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-md-6"> <b>Talent ID</b>
+                                <div class="form-group">
+                                    <div class="form-line">
                                     <input type="text" class="form-control" name="talentid" id="talentid" placeholder="Enter Talent Id" required>
-                                </div>
+                                    </div>
+                                    <span class="input-group-addon"> <i></i> </span> </div>
                             </div>
-                            <div class="form-group">
-                            <label class="form-label">Employee Name</label>
-                                <div class="form-line">
+                            <div class="col-md-6"> <b>Employee Name</b>
+                                <div class="form-group">
+                                    <div class="form-line">
                                     <input type="text" class="form-control" name="name" id="name" placeholder="Enter Employee name">
-                                </div>
+                                    </div>
+                                    <span class="input-group-addon"> <i></i> </span> </div>
                             </div>
-                            <div class="form-group">
-                            <label class="form-label">Email</label>
-                                <div class="form-line">
+                        </div>
+                    </div>
+                </div>
+           
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">                
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-md-6"> <b>Email</b>
+                                <div class="form-group">
+                                    <div class="form-line">
                                     <input type="email" class="form-control" name="email" id="email" placeholder="Enter Employee email">
-                                </div>
+                                    </div>
+                                    <span class="input-group-addon"> <i></i> </span> </div>
                             </div>
-                            <div class="form-group">
-                            <label class="form-label">Phone No</label>
-                                <div class="form-line">
+                            <div class="col-md-6"> <b>Phone No</b>
+                                <div class="form-group">
+                                    <div class="form-line">
                                     <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Employee phone">
-                                </div>
+                                    </div>
+                                    <span class="input-group-addon"> <i></i> </span> </div>
                             </div>
-                            <div class="form-group">
-                            <label class="form-label">Skill Set</label>
-                                <div class="form-line">
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">                
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-md-6"> <b>Skill Set</b>
+                                <div class="form-group">
+                                    <div class="form-line">
                                     <textarea name="skillset" id="skillset" cols="30" rows="5" class="form-control no-resize" required placeholder="php,jquery,symfony"></textarea>
-                              </div>
+                                    </div>
+                                    <span class="input-group-addon"> <i></i> </span> </div>
                             </div>
-                            <div class="form-group">
-                            <label class="form-label">Experience</label>
-                                <div class="form-line">
+                            <div class="col-md-6"> <b>Experience</b>
+                                <div class="form-group">
+                                    <div class="form-line">
                                     <input type="text" class="form-control" name="experience" id="experience" placeholder="Enter employee experience in years" required>
-                                </div>
+                                    </div>
+                                    <span class="input-group-addon"> <i></i> </span> </div>
                             </div>
-                            <div class="form-group">
-                            <label class="form-label">Turnaround Time</label>
-                                <div class="form-line">
+                        </div>
+                    </div>
+                </div>
+           
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">                
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-md-6"> <b>Turnaround Time</b>
+                                <div class="form-group">
+                                    <div class="form-line">
                                     <input type="text" class="form-control" name="time" id="time" placeholder="Enter Turnaround time" required>
-                               </div>
+                                    </div>
+                                    <span class="input-group-addon"> <i></i> </span> </div>
                             </div>
-                            <div class="form-group">
-                            <label class="form-label">Availability</label>
-                          
-                                <select  name="availability" id="availability" class="form-control show-tick" required>
+                            <div class="col-md-6"> <b>Availability</b>
+                                <div class="form-group">
+                                    <div class="">
+                                    <select  name="availability" id="availability" class="form-control show-tick" required>
                                     <option value="">-- Please select --</option>
                                     <option value="Full-Time">Full-Time</option>
                                     <option value="Part-Time">Part-Time</option>
                                   
-                                </select>
-                         
+                                </select> 
                             </div>
-                            <div class="form-group">
-                            <label class="form-label">Rate(USD)</label>
-                                <div class="form-line">
+                                    <span class="input-group-addon"> <i></i> </span> </div>
+                            </div>
+                        </div>
+                    </div>
+             
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">                
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-md-6"> <b>Rate(USD)</b>
+                                <div class="form-group">
+                                    <div class="form-line">
                                     <input type="text" class="form-control" name="rate" id="rate" placeholder="Enter employee rate" required>
-                               </div>
+                                    </div>
+                                    <span class="input-group-addon"> <i></i> </span> </div>
                             </div>
+                            
+                        </div>
+                    </div>
+                </div>    
+        </div>
+                       
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-link waves-effect" type="submit" id="submitbtn">SAVE CHANGES</button>

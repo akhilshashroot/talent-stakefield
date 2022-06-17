@@ -274,6 +274,11 @@
         }
     });
 });
+function deletefn(id) {
+    let updateurl = "{{ route('employee.destroy', ':id') }}";
+    updateurl = updateurl.replace(':id', id);
+    $('#deleteform').attr('action', updateurl);
+}
 </script>
 </body>
 </html>

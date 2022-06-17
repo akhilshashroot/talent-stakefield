@@ -26,7 +26,6 @@ Auth::routes();
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('employee', EmployeeController::class);
-Route::get('/employee-delete/{id}', [App\Http\Controllers\Admin\EmployeeController::class, 'delete'])->name('employee_delete');
 Route::get('/enquiry-list', [App\Http\Controllers\Admin\EnquiryController::class, 'index'])->name('enquirylist');
 
 Route::group(['middleware' => 'auth'], function() {

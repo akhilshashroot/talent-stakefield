@@ -117,12 +117,6 @@ class EmployeeController extends Controller
     {
         StakefieldUser::find($id)->delete();
   
-        return back();
-    }
-    public function delete($id)
-    {
-        StakefieldUser::find($id)->delete();
-  
-        return back();
+        return redirect()->route('home')->with('message', 'Employee deleted successfully');
     }
 }

@@ -77,7 +77,7 @@
                                     <td>{{$employee->rate}}</td>
                                     <td>
                                         <a class="" onclick="editfn({{$employee->id}})" href="javascript:void('0')"><i class="fa fa-edit"></i></a>||
-                                        <a class="" onclick="return confirm('Are you sure?')" href="{{route('employee_delete', $employee->id)}}"><i class="fa fa-trash"></i></a>
+                                        <a class="" href="javascript:void(0);" data-toggle="modal" data-target="#deleteModal" onclick="deletefn({{$employee->id}})"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -166,6 +166,25 @@
                 <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
                 </form>
             </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="deleteModalLabel"></h4>
+            </div>
+            <div class="modal-body">
+            <form class="delete" id="deleteform" action="" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        {{ csrf_field() }}
+        Are you sure want to delete?</div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-link waves-effect">Yes ! Delete it</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+            </form>
         </div>
     </div>
 </div>

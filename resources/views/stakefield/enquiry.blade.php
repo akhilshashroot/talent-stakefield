@@ -8,7 +8,7 @@
           <div class="view show" id="modal-enquirenow-view">
             <div class="modal-header border-0 bg-dark px-4">
               <h4 class="modal-title text-light">Just one more step..</h4>
-              <button class="btn-close btn-close-white" type="button" data-dismiss="modal" aria-label="btn-close "></button>
+              <button class="btn-close btn-close-white" type="button" data-dismiss="modal" aria-label="btn-close"></button>
             </div>
             <div class="modal-body px-4">
               <p class="fs-ms text-muted">Please provide the following details and we will get back to you with the complete details of the selected profiles.</p>

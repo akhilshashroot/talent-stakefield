@@ -346,13 +346,10 @@
                         <div class="centered centered-wrap  text-left">
                             <div class="container mt-5">
                                 <!-- <div class="visual-text visual-center pt-5 "> -->
-                                    <h2 class="main-title2 banner-color pt-5">Remote hiring has never  <br>  been easier.</h2>
-                                    <!-- <h6 class="main-title2 banner-color">Remote hiring has never been easier.</h3> -->
+                                    <h2 class="main-title2 banner-color pt-5">Hire the best remote talents<br>  through Stakefield</h2>
+                                    <!-- <h6 class="main-title2 banner-color">Hire the best remote talents through Stakefield.</h3> -->
 
-                                    <!-- <h1 class="main-title2 banner-color">Hire the best remote talents through Stakefield.</h1> -->
-                                    <p class="banner-color">
-                                    Hire the best remote talents through Stakefield.
-                                    </p>
+                                  
                                     <a class="btn button-touch has-radius-small mt-3" href="{{env('STAKE_URL')}}/contact-us">GET IN
                                         TOUCH</a>
 

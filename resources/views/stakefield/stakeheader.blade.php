@@ -27,7 +27,7 @@
                             <div class="collapse navbar-collapse flex-row-reverse" id="mega-menu">
                                 <ul class="nav navbar-nav">
                                     <li>
-                                        <a href="#"> Home </a>
+                                        <a href="https://www.stakefield.com"> Home </a>
                                     </li>
                                     <li class="dropdown right-dropdown" data-animation="fadeIn">
                                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"
@@ -48,6 +48,8 @@
                                             <li><a href="{{env('STAKE_URL')}}/global-approach.php"> Global Approach
                                                 </a></li>
                                             <li><a href="{{env('STAKE_URL')}}/life-at-stakefield"> Life at StakeField
+                                                </a></li>
+                                            <li><a href="{{env('STAKE_URL')}}/careers.php"> Careers
                                                 </a></li>
                                         </ul>
                                     </li>
@@ -88,7 +90,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="{{env('STAKE_URL')}}/careers.php"> Careers</a>
+                                        <a href="https://talents.stakefield.com"> Talents</a>
                                     </li>
                                     <li>
                                     <div class="dropdown mini-nav mini-nav-no-bg-hover">

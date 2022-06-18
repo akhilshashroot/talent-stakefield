@@ -54,8 +54,9 @@
               <li>
                 <a href="{{env('STAKE_URL')}}/empowerment-employees">Empowerment of Employees</a>
               </li>
-              <li><a href="/global-approach.php">Global Approach</a></li>
+              <li><a href="{{env('STAKE_URL')}}/global-approach.php">Global Approach</a></li>
               <li><a href="{{env('STAKE_URL')}}/life-at-stakefield">Life at StakeField</a></li>
+              <li><a href="{{env('STAKE_URL')}}/careers.php">Careers</a></li>
             </ul>
           </div>
           <div class="pt-3 footer-nav">
@@ -161,9 +162,9 @@
             <small
               class="policies_footer float-md-right text-center text-md-right"
             >
-              Stakefield Consultancy. All Rights Reserved.
+              A HashRoot Company. All Rights Reserved.
               <br />
-              ©2021 StakeField
+              ©2022 StakeField
             </small>
           </div>
         </div>

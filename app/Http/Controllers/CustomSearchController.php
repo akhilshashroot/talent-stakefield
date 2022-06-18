@@ -13,8 +13,32 @@ class CustomSearchController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
+            Log::debug($request->order[0]['column']); 
+            if($request->order[0]['column']==0){
+              $col='id';
+              $dec='desc';
+            }elseif($request->order[0]['column']==1){
+              $col='employee_id';
+              $dec=$request->order[0]['dir'];
+            }elseif($request->order[0]['column']==2){
+                $col='skill_set';
+                $dec=$request->order[0]['dir'];
+            }elseif($request->order[0]['column']==3){
+                $col='experience';
+                $dec=$request->order[0]['dir'];
+            }elseif($request->order[0]['column']==4){
+                $col='turnaround_time';
+                $dec=$request->order[0]['dir'];
+            }elseif($request->order[0]['column']==5){
+                $col='availability';
+                $dec=$request->order[0]['dir'];
+            }elseif($request->order[0]['column']==6){
+                $col='rate';
+                $dec=$request->order[0]['dir'];
+            }
+           
             DB::statement(DB::raw('set @rownum=0'));
-            $data = StakefieldUser::select(  DB::raw('@rownum  := @rownum  + 1 AS rownum'),'stakefield_users.*')->orderby('stakefield_users.id','desc');
+            $data = StakefieldUser::select(  DB::raw('@rownum  := @rownum  + 1 AS rownum'),'stakefield_users.*')->orderby($col,$dec);
             return Datatables::of($data)
                     ->addIndexColumn()
                     

@@ -62,6 +62,8 @@ class EmployeeController extends Controller
         $user->availability = $validated['availability'];
         $user->rate = $validated['rate'];
         $user->employee_id = $validated['talentid'];
+        $string= str_replace(' ', '',$validated['skillset']);
+        $user->skill_data =$string;
         $res = $user->save();
         if($res && $validated['userid']) {
             return redirect()->route('home')->with('message', 'Employee updated successfully');

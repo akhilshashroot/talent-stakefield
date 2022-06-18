@@ -16,9 +16,12 @@
     <link rel="stylesheet" href="{{asset('css/color_skins.css')}}">
 </head>
 <style>
-    .theme-orange .authentication .card .header {
-    background: linear-gradient(#F8F8F8) !important;
-}
+   .theme-orange .authentication .card .header {
+    background: linear-gradient(45deg, #EEE, #EEE) !important;
+    }
+   .ss{
+    background-color: #d67a7a !important;
+   }
     </style>
 <body class="theme-orange">
 <div class="authentication">
@@ -66,7 +69,7 @@
                     </div>                        
               
                 <div class="col-lg-12">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary ss">
                                     {{ __('Login') }}
                                 </button>                    
                     <!-- <a href="sign-up.html" class="btn btn-raised btn-default waves-effect">SIGN UP</a>                         -->

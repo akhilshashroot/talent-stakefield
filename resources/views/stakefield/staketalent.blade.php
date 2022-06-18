@@ -143,7 +143,31 @@ thead {
     display: none;
   }
 }
+.tooltip.show {
+  opacity: 1;
+}
 
+.tooltip-inner {
+  background-color: #55565b;
+  box-shadow: 0px 0px 4px black;
+  opacity: 1 !important;
+}
+
+.tooltip.bs-tooltip-right .arrow:before {
+  border-right-color: #55565b !important;
+}
+
+.tooltip.bs-tooltip-left .arrow:before {
+ border-left-color: #55565b !important;
+}
+
+.tooltip.bs-tooltip-bottom .arrow:before {
+ border-bottom-color: #55565b !important;
+}
+
+.tooltip.bs-tooltip-top .arrow:before {
+ border-top-color: #55565b !important;
+}
 </style>
 
 
@@ -170,7 +194,7 @@ thead {
           <th scope="col">Talent ID</th>
           <th scope="col" style="width:30%;">Skillset </th>
           <th scope="col">Experience </th>
-          <th scope="col">TAT</th>
+          <th scope="col" data-toggle="tooltip" title="Turn Around Time">TAT</th>
           <th scope="col">Availability </th>
           <th scope="col">Rate (USD) </th>
           <th scope="col">Action </th>

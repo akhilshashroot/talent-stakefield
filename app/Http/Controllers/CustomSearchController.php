@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\StakefieldUser;
 use DataTables;
+use Illuminate\Support\Facades\Log;
+
 class CustomSearchController extends Controller
 {
     public function index(Request $request)
@@ -22,15 +24,31 @@ class CustomSearchController extends Controller
                             $instance->where($request->get('approved'),'LIKE', "%$search%");
                         }
                         if (!empty($request->get('search')) && empty($request->get('approved'))) {
-                             $instance->where(function($w) use($request){
+                            Log::debug($request->get('search'));
+                            if (strpos($request->get('search'), ',') !== false) {
+                                $new_variable= str_replace(' ', '',$request->get('search'));
+                               }else{
+                                $new_variable= str_replace(' ', ',',$request->get('search'));
+                               }
+                             $searches= explode(",",$new_variable);
+                            // foreach($searches as $searcher){
+                             $instance->where(function($w) use($request,$searches){
                                 $search = $request->get('search');
-                                $w->orWhere('employee_id', 'LIKE', "%$search%")
-                                ->orWhere('skill_set', 'LIKE', "%$search%")
-                                ->orWhere('experience', 'LIKE', "%$search%")
+                                $w->orWhere('employee_id', 'LIKE', "%$search%");
+                                $w->orWhere('skill_data', 'LIKE', "%$searches[0]%");
+                                for($i=0;$i<count($searches);$i++){
+
+                                $w->orWhere(function($ws) use($searches,$i){
+                                    $ws->orWhere('skill_data', 'LIKE', "%$searches[$i]%");
+                               
+                              });
+                            }
+                              $w->orWhere('experience', 'LIKE', "%$search%")
                                 ->orWhere('turnaround_time', 'LIKE', "%$search%")
                                 ->orWhere('availability', 'LIKE', "%$search%")
                                 ->orWhere('rate', 'LIKE', "%$search%");
                             });
+                      //  }
                         }
                     })    
                     ->addColumn('action', function($row){

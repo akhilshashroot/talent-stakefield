@@ -510,6 +510,8 @@ $(function () {
 </script>
 
 <script type="text/javascript">
+    $('[data-toggle="tooltip"]').tooltip();
+
    window.onload = window.localStorage.clear();
 
     $(document).on('click','#passingID',function(e) {

@@ -1,5 +1,14 @@
 
 <style>
+
+
+/* 
+table.dataTable td:nth-child(2){
+  width: 34px;
+  max-width: 34px;
+  word-break: break-all;
+  white-space: pre-line;
+} */
   select.form-control{
     display: inline;
     width: 200px;
@@ -191,11 +200,11 @@ thead {
       <thead class="tdhcc">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Talent ID</th>
-          <th scope="col" style="width:30%;">Skillset </th>
-          <th scope="col">Experience </th>
-          <th scope="col" data-toggle="tooltip" title="Turn Around Time">TAT</th>
-          <th scope="col">Availability </th>
+          <th scope="col" style="width: 63px;">Talent ID</th>
+          <th scope="col" style="width:45%;">Skillset </th>
+          <th scope="col" style="width: 60px;">Experience </th>
+          <th scope="col" style="width: 60px;" data-toggle="tooltip" title="Turn Around Time">TAT</th>
+          <th scope="col" style="width: 65px;">Availability </th>
           <th scope="col">Rate (USD) </th>
           <th scope="col">Action </th>
            

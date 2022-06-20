@@ -470,6 +470,7 @@ $(function () {
         language: {
         searchPlaceholder: "Search Profiles",
         search: "",
+        emptyTable: "No profiles available",
 
     },
         ajax: {
@@ -481,13 +482,13 @@ $(function () {
         },
         columns: [
             { data: 'DT_RowIndex', DT_RowIndex: 'DT_RowIndex',  orderable: false, searchable: false },
-            {data: 'employee_id', name: 'employee_id'},
-            {data: 'skill_set', name: 'skill_set'},
+            {data: 'employee_id',  width: '100px',name: 'employee_id'},
+            {data: 'skill_set', width: '420px', name: 'skill_set'},
             {data: 'experience', name: 'experience'},
             {data: 'turnaround_time', name: 'turnaround_time'},
             {data: 'availability', name: 'availability'},
-            {data: 'rate', name: 'rate'},
-            {data: 'action', name: 'action',  orderable: false,  searchable: false},
+            {data: 'rate',width: '86px', name: 'rate'},
+            {data: 'action',width:'110px',  name: 'action',  orderable: false,  searchable: false},
 
             
         ]

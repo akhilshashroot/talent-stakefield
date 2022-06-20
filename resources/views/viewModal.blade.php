@@ -16,7 +16,7 @@
                 <input type="email" class="form-control" name="email" id="empemail" placeholder="#" readonly>
                 <label class="form-label">Phone No</label>
                 <input type="text" class="form-control" name="phone" id="empphone" placeholder="#" readonly>
-                <label class="form-label">Skill Set</label>
+                <label class="form-label">Skills & Tools</label>
                 <textarea name="skillset" id="empskillset" cols="30" rows="5" class="form-control no-resize" required placeholder="#" readonly></textarea>
             </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

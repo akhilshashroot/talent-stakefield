@@ -196,17 +196,17 @@ thead {
 
     </span>
   </div> -->
-    <table class="table table-hover" id="filterTable"  style="width: 100%;">
+    <table class="table table-hover" id="filterTable" style="width: 100%;" >
       <thead class="tdhcc">
         <tr>
           <th scope="col">#</th>
-          <th scope="col" style="width: 72px;">Talent ID</th>
-          <th scope="col" style="width:45%;">Skillset </th>
-          <th scope="col" style="width: 60px;">Experience </th>
-          <th scope="col" style="width: 60px;" data-toggle="tooltip" title="Turn Around Time">TAT</th>
-          <th scope="col" style="width: 65px;">Availability </th>
-          <th scope="col" style="width: 65px;">Rate (USD) </th>
-          <th scope="col" style="width: 65px;">Action </th>
+          <th scope="col" >Talent ID</th>
+          <th scope="col" >Skills & Tools </th>
+          <th scope="col" >Experience </th>
+          <th scope="col"  data-toggle="tooltip" title="Turn Around Time">TAT</th>
+          <th scope="col" >Availability </th>
+          <th scope="col" >Rate (USD) </th>
+          <th scope="col" >Action </th>
            
         </tr>
       </thead>

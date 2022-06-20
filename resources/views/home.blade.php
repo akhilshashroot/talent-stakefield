@@ -47,7 +47,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Talent ID</th>
-                                    <th>Skillset</th>
+                                    <th>Skills & Tools</th>
                                     <th>Experience</th>
                                     <th>TAT</th>
                                     <th>Availability</th>
@@ -59,7 +59,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Talent ID</th>
-                                    <th>Skillset</th>
+                                    <th>Skills & Tools</th>
                                     <th>Experience</th>
                                     <th>TAT</th>
                                     <th>Availability</th>
@@ -153,7 +153,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12">                
                     <div class="body">
                         <div class="row clearfix">
-                            <div class="col-md-6"> <b>Skill Set</b>
+                            <div class="col-md-6"> <b>Skills & Tools</b>
                                 <div class="form-group">
                                     <div class="form-line">
                                     <textarea name="skillset" id="skillset" cols="30" rows="5" class="form-control no-resize" required placeholder="php,jquery,symfony"></textarea>

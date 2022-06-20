@@ -32,20 +32,20 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>Date of enquiry </th>
                                     <th>Client Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Date of enquiry </th>
                                     <th>Talent ID</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th>#</th>
+                                    <th>Date of enquiry </th>
                                     <th>Client Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Date of enquiry </th>
                                     <th>Talent ID</th>
                                 </tr>
                             </tfoot>
@@ -53,10 +53,10 @@
                                 @foreach($enquiries as $list)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
+                                    <td>{{\Carbon\Carbon::parse($list->created_at)->format('Y-m-d') }}</td>
                                     <td>{{$list->name}}</td>
                                     <td>{{$list->email}}</td>
                                     <td>{{$list->phone}}</td>
-                                    <td>{{\Carbon\Carbon::parse($list->created_at)->format('Y-m-d') }}</td>
 
                                     <td>
                                     @foreach(explode(',', $list->employee_id) as $info) 

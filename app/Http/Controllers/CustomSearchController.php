@@ -48,23 +48,52 @@ class CustomSearchController extends Controller
                             $instance->where($request->get('approved'),'LIKE', "%$search%");
                         }
                         if (!empty($request->get('search')) && empty($request->get('approved'))) {
-                            Log::debug($request->get('search'));
                             if (strpos($request->get('search'), ',') !== false) {
                                 $new_variable= str_replace(' ', '',$request->get('search'));
                                }else{
                                 $new_variable= str_replace(' ', ',',$request->get('search'));
                                }
-                             $searches= explode(",",$new_variable);
+                             $searches= explode(",",$new_variable);                            //Log::debug(count($searches));
+
                             // foreach($searches as $searcher){
                              $instance->where(function($w) use($request,$searches){
                                 $search = $request->get('search');
                                 $w->orWhere('employee_id', 'LIKE', "%$search%");
-                                $w->orWhere('skill_data', 'LIKE', "%$searches[0]%");
+                              //$w->Where('skill_data', 'LIKE', "%$searches[0]%");
                                 for($i=0;$i<count($searches);$i++){
-
+                                    Log::debug($i);
                                 $w->orWhere(function($ws) use($searches,$i){
-                                    $ws->orWhere('skill_data', 'LIKE', "%$searches[$i]%");
-                               
+                                    $ws->Where('skill_data', 'LIKE', "%$searches[0]%");
+                                    if(count($searches)==2){
+                                        $ws->Where('skill_data', 'LIKE', "%$searches[1]%");
+
+                                    }
+
+                                    if(count($searches)==3){
+                                        $ws->Where('skill_data', 'LIKE', "%$searches[2]%");
+
+                                    }    if(count($searches)==4){
+                                        $ws->Where('skill_data', 'LIKE', "%$searches[3]%");
+
+                                    }    if(count($searches)==5){
+                                        $ws->Where('skill_data', 'LIKE', "%$searches[4]%");
+
+                                    }    if(count($searches)==6){
+                                        $ws->Where('skill_data', 'LIKE', "%$searches[5]%");
+
+                                    }    if(count($searches)==7){
+                                        $ws->Where('skill_data', 'LIKE', "%$searches[6]%");
+
+                                    }    if(count($searches)==8){
+                                        $ws->Where('skill_data', 'LIKE', "%$searches[7]%");
+
+                                    }    if(count($searches)==9){
+                                        $ws->Where('skill_data', 'LIKE', "%$searches[8]%");
+
+                                    }    if(count($searches)==10){
+                                        $ws->Where('skill_data', 'LIKE', "%$searches[9]%");
+
+                                    }
                               });
                             }
                               $w->orWhere('experience', 'LIKE', "%$search%")

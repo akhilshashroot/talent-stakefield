@@ -41,7 +41,13 @@
 <style>
     .swal2-popup .swal2-styled.swal2-confirm {
 
-    background-color: #55565b !important;
+    background-color: #d67a7a !important;
+   }
+   .swal2-content,.swal2-animate-success-icon{
+    display:none !important;
+   }
+   .swal2-title{
+    font-size: 15px !important;
    }
    .bg-dark {
     background: #d67a7a  !important;
@@ -676,6 +682,7 @@ $(function () {
          
   </script>
     <script>
+       
             if ($("#contactUsForm").length > 0) {
         $("#contactUsForm").validate({
         rules: {
@@ -725,7 +732,13 @@ $(function () {
         $("#submit"). attr("disabled", false);
         //alert('Ajax form has been submitted successfully');
         document.getElementById("contactUsForm").reset(); 
-        swal("Thank you for contacting us", "success");  
+        swal({
+  title: 'Thank you for choosing us to hire your remote talents. We will get back to you at the earliest.',
+  text: "You won't be able to revert this!",
+  type: 'success',
+  showConfirmButton:true,
+  confirmButtonText: 'okay'
+});        
         $('#myModal').modal('hide');
          $('body').removeClass('modal-open');
          window.onload = window.localStorage.clear();

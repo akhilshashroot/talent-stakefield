@@ -78,6 +78,9 @@ thead {
   .grecaptcha-badge{
         display:none !important;
         }
+        .dataTables_empty::before {
+   content: none !important;
+}
   /* Force table to not be like tables anymore */
   table,
   thead,
@@ -203,7 +206,7 @@ thead {
           <th scope="col" >Talent ID</th>
           <th scope="col" >Skills & Tools </th>
           <th scope="col" >Experience </th>
-          <th scope="col"  data-toggle="tooltip" title="Turn Around Time">TAT</th>
+          <th scope="col"  data-toggle="tooltip" title="Time taken for the talent to onboard">TAT</th>
           <th scope="col" >Availability </th>
           <th scope="col" >Rate (USD) </th>
           <th scope="col" >Action </th>

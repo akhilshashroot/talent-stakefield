@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 Route::get('/custom-search', [App\Http\Controllers\CustomSearchController::class, 'index'])->name('customsearch.index');
 Route::post('enquiry-form', [App\Http\Controllers\EnquiryController::class, 'store'])->name('store');
+Route::post('contact-us', [App\Http\Controllers\ContactUsController::class, 'store'])->name('contact.store');
 
 Auth::routes();
 

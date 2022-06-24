@@ -40,24 +40,24 @@ class ContactUsController extends Controller
     {
         Log::debug( $request);
         $validatedData = $request->validate([
-          'name' => 'required',
-          'email' => 'required',
-          'phone' => 'nullable',
-          'message' => 'required',
+          'name1' => 'required',
+          'email1' => 'required',
+          'phone1' => 'nullable',
+          'r1_message' => 'required',
         ]);
         $maildata=array();
-        $maildata['name']    		= $request->name;
-        $maildata['email'] 		=  $request->email;
-        $maildata['subject'] 		=  'Contactus Enquiry';
-        $maildata['phone'] 		=  $request->phone;
-        $maildata['message']		=  '';
+        $maildata['name']    		= $request->name1;
+        $maildata['email'] 		=  $request->email1;
+        $maildata['subject'] 		=  'Stakefield Contact-us';
+        $maildata['phone'] 		=  $request->phone1;
+        $maildata['message']		=  $request->r1_message;
            
 
         $data = new ContactusData;
-        $data->name = $request->name;
-        $data->email = $request->email;
-        $data->phone = $request->phone;
-        $data->message = $request->message;
+        $data->name = $request->name1;
+        $data->email = $request->email1;
+        $data->phone = $request->phone1;
+        $data->message = $request->r1_message;
         $res = $data->save();
         if($res) {
             Mail::send(new ContactusMail($maildata));

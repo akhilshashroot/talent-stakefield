@@ -39,6 +39,15 @@
 
 </head>
 <style>
+
+    .cs {
+
+    min-height: 125px !important;
+}
+    .mt-3{
+        color:#fff !important;
+
+    }
     .swal2-popup .swal2-styled.swal2-confirm {
 
     background-color: #d67a7a !important;
@@ -48,6 +57,10 @@
    }
    .swal2-title{
     font-size: 15px !important;
+   }
+   .swal2-popup .swal2-title{
+    letter-spacing: .025rem !important;
+    font-weight: 400 !important;
    }
    .bg-dark {
     background: #d67a7a  !important;
@@ -356,7 +369,7 @@
                                     <!-- <h6 class="main-title2 banner-color">Hire the best remote talents through Stakefield.</h3> -->
 
                                   
-                                    <a class="btn button-touch has-radius-small mt-3" href="{{env('STAKE_URL')}}/contact-us">GET IN
+                                    <a class="btn button-touch has-radius-small mt-3" id="cntbt">GET IN
                                         TOUCH</a>
 
 
@@ -375,7 +388,8 @@
 
 
 
-                
+                @include('stakefield.contactpopup') 
+
                 @include('stakefield.staketalent') 
                 @include('stakefield.enquiry') 
             
@@ -681,6 +695,7 @@ $(function () {
         if($('#buttonID').is(':checked'));
          
   </script>
+  
     <script>
        
             if ($("#contactUsForm").length > 0) {
@@ -737,7 +752,7 @@ $(function () {
   text: "You won't be able to revert this!",
   type: 'success',
   showConfirmButton:true,
-  confirmButtonText: 'okay'
+  confirmButtonText: 'Okay'
 });        
         $('#myModal').modal('hide');
          $('body').removeClass('modal-open');
@@ -757,6 +772,90 @@ $(function () {
 
    </script>
 
+
+
+
+
+
+<script>
+    $(document).on('click','#cntbt',function(e) {
+        //$('#mycontact').show();
+
+        $('#mycontact').modal('show');
+   });
+</script>
+
+
+
+
+<script>
+       
+       if ($("#contactForm").length > 0) {
+   $("#contactForm").validate({
+   rules: {
+   name1: {
+   required: true,
+   maxlength: 50
+   },
+   email1: {
+   required: true,
+   maxlength: 50,
+   email: true,
+   },  
+   r1_message: {
+   required: true,
+   maxlength: 300
+   },   
+   },
+   messages: {
+   name1: {
+   required: "Please enter name",
+   maxlength: "Your name maxlength should be 50 characters long."
+   },
+   email1: {
+   required: "Please enter valid email",
+   email: "Please enter valid email",
+   maxlength: "The email name should less than or equal to 50 characters",
+   },   
+   r1_message: {
+   required: "Please enter message",
+   maxlength: "Your message name maxlength should be 300 characters long."
+   },
+   },
+   submitHandler: function(form) {
+   $.ajaxSetup({
+   headers: {
+   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+   }
+   });
+   $('#submit1').html('Please Wait...');
+   $("#submit1"). attr("disabled", true);
+   $.ajax({
+   url: "{{url('contact-us')}}",
+   type: "POST",
+   data: $('#contactForm').serialize(),
+   success: function( response ) {
+   $('#submit1').html('Submit');
+   $("#submit1"). attr("disabled", false);
+   //alert('Ajax form has been submitted successfully');
+   document.getElementById("contactForm").reset(); 
+   swal({
+title: 'Thank you for contacting us. We will get back to you at the earliest.',
+text: "You won't be able to revert this!",
+type: 'success',
+showConfirmButton:true,
+confirmButtonText: 'Okay'
+});        
+   $('#mycontact').modal('hide');
+    $('body').removeClass('modal-open');
+
+   }
+   });
+   }
+   })
+   }
+
+</script>
 </body>
 
 </html>

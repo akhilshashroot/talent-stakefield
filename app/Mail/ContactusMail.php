@@ -36,7 +36,7 @@ class ContactusMail extends Mailable
         Message : </b>".$data['message']."<br/><br/><b>";
         $subject  = $data['subject'];
         $to_address="akhil.s@hashroot.com";
-        return $this->to($to_address)->from('site@stakefield.com', 'Contactus Enquiry')
+        return $this->to($to_address)->from('site@stakefield.com', 'Stakefield contact-us')
         ->subject($subject)
         ->html($message_content);
     }

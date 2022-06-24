@@ -7,7 +7,7 @@
       <div class="modal-content border-0">
           <div class="view show" id="modal-contact-view">
             <div class="modal-header border-0 bg-dark px-4">
-              <h4 class="modal-title text-light">GET IN TOUCH</h4>
+              <h4 class="modal-title text-light">Get in touch</h4>
               <button class="btn-close btn-close-white" type="button" data-dismiss="modal" aria-label="btn-close"></button>
             </div>
             <div class="modal-body px-4">

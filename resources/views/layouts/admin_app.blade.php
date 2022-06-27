@@ -222,6 +222,7 @@
             $('#talentid').val(res.employee_id);
             $('#comments').val(res.comments);
             $('#userid').val(id);
+            $('#ectc').val(res.ectc);
             let updateurl = "{{ route('employee.update', ':id') }}";
             updateurl = updateurl.replace(':id', id);
             //$("#employee_add").attr("method", "patch");
@@ -310,6 +311,7 @@ function viewfn(talentid) {
             $('#emptime').val(res.turnaround_time);
             $('#empavailability').val(res.availability);
             $('#emprate').val(res.rate);
+            $('#empectc').val(res.ectc);
             $('#emptalentid').val(res.employee_id);
             $('#empcomment').val(res.comments);
 

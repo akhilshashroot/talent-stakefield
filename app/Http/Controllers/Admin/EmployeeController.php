@@ -47,7 +47,8 @@ class EmployeeController extends Controller
             'availability' => 'required',
             'rate' => 'required',
             'talentid' => 'required',
-            'userid'=>'nullable'
+            'userid'=>'nullable',
+            'ectc' => 'nullable'
         ]);
         if($validated['userid']) {
             $user =  StakefieldUser::where('id',$validated['userid'])->first();
@@ -66,6 +67,7 @@ class EmployeeController extends Controller
         $string= str_replace(' ', '',$validated['skillset']);
         $user->skill_data =$string;
         $user->comments =$validated['comments'];
+        $user->ectc =$validated['ectc'];
         $res = $user->save();
         if($res && $validated['userid']) {
             return redirect()->route('home')->with('message', 'Employee updated successfully');

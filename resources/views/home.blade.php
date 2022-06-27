@@ -52,6 +52,7 @@
                                     <th>TAT</th>
                                     <th>Availability</th>
                                     <th>Rate(USD)</th>
+                                    <th>Date of Entry</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -63,7 +64,8 @@
                                     <th>Experience</th>
                                     <th>TAT</th>
                                     <th>Availability</th>
-                                    <th>Rate</th>
+                                    <th>Rate(USD)</th>
+                                    <th>Date of Entry</th>
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
@@ -77,6 +79,7 @@
                                     <td>{{$employee->turnaround_time}}</td>
                                     <td>{{$employee->availability}}</td>
                                     <td>{{$employee->rate}}</td>
+                                    <td>{{$employee->updated_at->toDateString()}}</td>
                                     <td>
                                         <a class="" onclick="editfn({{$employee->id}})" href="javascript:void('0')"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;
                                         <a class="delete-color" href="javascript:void(0);" data-toggle="modal" data-target="#deleteModal" onclick="deletefn({{$employee->id}})"><i class="fa fa-trash"></i></a>
@@ -215,6 +218,21 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                     <textarea name="comments" id="comments" cols="30" rows="5" class="form-control no-resize"  placeholder="comments"></textarea>
+                                    </div>
+                                    <span class="input-group-addon"> <i></i> </span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">                
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-md-6"> <b>ECTC</b>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                    <input type="text" class="form-control" name="ectc" id="ectc" placeholder="Enter expected CTC">
                                     </div>
                                     <span class="input-group-addon"> <i></i> </span> </div>
                             </div>

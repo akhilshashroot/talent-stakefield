@@ -46,26 +46,28 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                     <th>Date</th>
                                     <th>Talent ID</th>
                                     <th>Skills & Tools</th>
                                     <th>Experience</th>
                                     <th>TAT</th>
                                     <th>Availability</th>
                                     <th>Rate(USD)</th>
-                                    <th>Date of Entry</th>
+                            
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th>#</th>
+                                       <th>Date</th>
                                     <th>Talent ID</th>
                                     <th>Skills & Tools</th>
                                     <th>Experience</th>
                                     <th>TAT</th>
                                     <th>Availability</th>
                                     <th>Rate(USD)</th>
-                                    <th>Date of Entry</th>
+                                 
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
@@ -73,13 +75,14 @@
                                 @foreach($employees as $employee)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
+                                                                        <td>{{$employee->updated_at->toDateString()}}</td>
+
                                     <td><a class="" href="javascript:void(0);" data-toggle="modal" data-target="#viewModal" onclick="viewfn('{{$employee->employee_id}}')">{{$employee->employee_id}}</a></td>
                                     <td>{{$employee->skill_set}}</td>
                                     <td>{{$employee->experience}}</td>
                                     <td>{{$employee->turnaround_time}}</td>
                                     <td>{{$employee->availability}}</td>
                                     <td>{{$employee->rate}}</td>
-                                    <td>{{$employee->updated_at->toDateString()}}</td>
                                     <td>
                                         <a class="" onclick="editfn({{$employee->id}})" href="javascript:void('0')"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;
                                         <a class="delete-color" href="javascript:void(0);" data-toggle="modal" data-target="#deleteModal" onclick="deletefn({{$employee->id}})"><i class="fa fa-trash"></i></a>

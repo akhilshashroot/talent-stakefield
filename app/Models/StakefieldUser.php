@@ -18,6 +18,7 @@ class StakefieldUser extends Model
         'name',
         'email',
         'skill_data',
-        'comments'
+        'comments',
+        'ectc'
     ];
 }

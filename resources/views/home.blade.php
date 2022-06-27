@@ -214,13 +214,15 @@
                                     </div>
                                     <span class="input-group-addon"> <i></i> </span> </div>
                             </div>
-                            <div class="col-md-6"> <b>Comments</b>
+
+                            <div class="col-md-6"> <b>ECTC</b>
                                 <div class="form-group">
                                     <div class="form-line">
-                                    <textarea name="comments" id="comments" cols="30" rows="5" class="form-control no-resize"  placeholder="comments"></textarea>
+                                    <input type="text" class="form-control" name="ectc" id="ectc" placeholder="Enter expected CTC">
                                     </div>
                                     <span class="input-group-addon"> <i></i> </span> </div>
                             </div>
+                           
                         </div>
                     </div>
                 </div>    
@@ -229,10 +231,10 @@
             <div class="col-lg-12 col-md-12 col-sm-12">                
                     <div class="body">
                         <div class="row clearfix">
-                            <div class="col-md-6"> <b>ECTC</b>
+                        <div class="col-md-6"> <b>Comments</b>
                                 <div class="form-group">
                                     <div class="form-line">
-                                    <input type="text" class="form-control" name="ectc" id="ectc" placeholder="Enter expected CTC">
+                                    <textarea name="comments" id="comments" cols="30" rows="5" class="form-control no-resize"  placeholder="comments"></textarea>
                                     </div>
                                     <span class="input-group-addon"> <i></i> </span> </div>
                             </div>

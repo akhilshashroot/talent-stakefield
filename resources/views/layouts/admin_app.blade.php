@@ -220,6 +220,7 @@
             $('#availability').val(res.availability);
             $('#rate').val(res.rate);
             $('#talentid').val(res.employee_id);
+            $('#comments').val(res.comments);
             $('#userid').val(id);
             let updateurl = "{{ route('employee.update', ':id') }}";
             updateurl = updateurl.replace(':id', id);
@@ -310,6 +311,8 @@ function viewfn(talentid) {
             $('#empavailability').val(res.availability);
             $('#emprate').val(res.rate);
             $('#emptalentid').val(res.employee_id);
+            $('#empcomment').val(res.comments);
+
         }
       });
     }

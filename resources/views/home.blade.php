@@ -211,7 +211,13 @@
                                     </div>
                                     <span class="input-group-addon"> <i></i> </span> </div>
                             </div>
-                            
+                            <div class="col-md-6"> <b>Comments</b>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                    <textarea name="comments" id="comments" cols="30" rows="5" class="form-control no-resize"  placeholder="comments"></textarea>
+                                    </div>
+                                    <span class="input-group-addon"> <i></i> </span> </div>
+                            </div>
                         </div>
                     </div>
                 </div>    

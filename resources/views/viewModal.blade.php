@@ -28,7 +28,9 @@
                 <input type="text" class="form-control" name="availability" id="empavailability" placeholder="#" readonly>
                 <label class="form-label">Rate(USD)</label>
                 <input type="text" class="form-control" name="rate" id="emprate" placeholder="#" readonly>
-            </div>
+                <label class="form-label">Comments</label>
+                <textarea name="empcomment" id="empcomment" cols="30" rows="5" class="form-control no-resize" required placeholder="comments" readonly></textarea>
+           </div>
             </div>
                         </div>
                         <div class="modal-footer">

@@ -40,6 +40,7 @@ class EmployeeController extends Controller
             'name' => 'nullable',
             'email' => 'nullable',
             'phone' => 'nullable',
+            'comments' => 'nullable',
             'skillset' => 'required',
             'experience' => 'required',
             'time' => 'required',
@@ -64,6 +65,7 @@ class EmployeeController extends Controller
         $user->employee_id = $validated['talentid'];
         $string= str_replace(' ', '',$validated['skillset']);
         $user->skill_data =$string;
+        $user->comments =$validated['comments'];
         $res = $user->save();
         if($res && $validated['userid']) {
             return redirect()->route('home')->with('message', 'Employee updated successfully');

@@ -17,6 +17,7 @@ class StakefieldUser extends Model
         'rate',
         'name',
         'email',
-        'skill_data'
+        'skill_data',
+        'comments'
     ];
 }

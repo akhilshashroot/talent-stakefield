@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $employees = StakefieldUser::orderBy('id','desc')->get();
+        $employees = StakefieldUser::orderBy('updated_at','desc')->get();
         return view('home',compact('employees'));
     }
     public function showChangePasswordGet() {

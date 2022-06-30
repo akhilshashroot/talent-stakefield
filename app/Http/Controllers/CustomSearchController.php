@@ -15,7 +15,7 @@ class CustomSearchController extends Controller
         if ($request->ajax()) {
             Log::debug($request->order[0]['column']); 
             if($request->order[0]['column']==0){
-              $col='id';
+              $col='updated_at';
               $dec='desc';
             }elseif($request->order[0]['column']==1){
               $col='employee_id';

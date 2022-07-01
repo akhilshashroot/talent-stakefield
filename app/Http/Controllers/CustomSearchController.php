@@ -37,8 +37,12 @@ class CustomSearchController extends Controller
                 $dec=$request->order[0]['dir'];
             }
            
-            DB::statement(DB::raw('set @rownum=0'));
-            $data = StakefieldUser::select(  DB::raw('@rownum  := @rownum  + 1 AS rownum'),'stakefield_users.*')->orderby($col,$dec);
+          
+            $data = StakefieldUser::select( 'stakefield_users.id','stakefield_users.availability','stakefield_users.employee_id',
+            'stakefield_users.experience','stakefield_users.turnaround_time','stakefield_users.skill_set',
+            'stakefield_users.rate','stakefield_users.skill_data'
+            )
+            ->orderby($col,$dec);
             return Datatables::of($data)
                     ->addIndexColumn()
                     

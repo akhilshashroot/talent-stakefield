@@ -5,10 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="title" content=" Stakefield | Redefining Recruitment">
-    <meta name="description"
-        content="Stakefield is the best staffing company that provides staffing and recruitment services to companies of all scales. Experienced recruitment consultants for hiring the right talent for business.">
-    <meta name="keywords" content="stakefield">
+    <meta name="title" content="Hire Best Remote Talents | Hire IT Talents"> 
+    <meta name="description" content="Hire Best remote Talents from Stakefield that provides best staffing and recruitment services to companies of all scales. Hire IT talents for business.">    <meta name="keywords" content="stakefield">
 
     <title> Stakefield | Redefining Recruitment </title>
     <link rel="icon" href="{{asset('stakefield/img/logo/favicon/white.png')}}" type="image/png" sizes="32x32">
@@ -153,7 +151,7 @@
     }
 
     .res-background {
-        background-image: url(stakefield/img/Banner1.png);
+        background-image: url(stakefield/img/hire-best-remote-talents.png);
         background-size: cover;
         background-position: 46% 0;
         /* background-position: top !important; */
@@ -178,7 +176,7 @@
         }
 
         .res-background {
-            background-image: url(stakefield/img/Banner1.png);
+            background-image: url(stakefield/img/hire-best-remote-talents.png);
             background-size: cover;
             background-position: 72% 0% !important;
         }

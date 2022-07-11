@@ -36,7 +36,9 @@
                                     <th>Client Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
+                                    <th>Website</th>
                                     <th>Talent ID</th>
+                                  
                                 </tr>
                             </thead>
                             <tfoot>
@@ -46,7 +48,10 @@
                                     <th>Client Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
+                                    <th>Website</th>
                                     <th>Talent ID</th>
+                                   
+
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -57,7 +62,10 @@
                                     <td>{{$list->name}}</td>
                                     <td>{{$list->email}}</td>
                                     <td>{{$list->phone}}</td>
-
+                                    <td>@if($list->website){{$list->website}}
+                                        @else 
+                                        {{"stakefield"}}
+                                        @endif</td>
                                     <td>
                                     @foreach(explode(',', $list->employee_id) as $info) 
                                     <a class="" href="javascript:void(0);" data-toggle="modal" data-target="#viewModal" onclick="viewfn('{{$info}}')">{{$info}}</a>,

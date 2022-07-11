@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\StakefieldUser;
-
+use Illuminate\Support\Facades\Log;
+use App\Models\EnquiryData;
 class EmployeeController extends Controller
 {
     /**
@@ -69,6 +70,8 @@ class EmployeeController extends Controller
         $user->comments =$validated['comments'];
         $user->ectc =$validated['ectc'];
         $res = $user->save();
+       // dd($validated);
+     //   $this->curlAdd($validated);
         if($res && $validated['userid']) {
             return redirect()->route('home')->with('message', 'Employee updated successfully');
         } elseif($res) {
@@ -123,7 +126,59 @@ class EmployeeController extends Controller
     public function destroy($id)
     {
         StakefieldUser::find($id)->delete();
-  
+        $validated=['id'=>$id];
+        $this->curlDelete($validated);
         return redirect()->route('home')->with('message', 'Employee deleted successfully');
+    }
+
+
+
+    public function curlAdd($request)
+    {
+        $fields_string  =  $request;
+       // Log::info( "curlrequest",[$fields_string]);
+
+        $header         = [
+                            'Accept: application/json',
+                            'Cache-Control: no-cache',
+                          ];
+       
+            $url          = 'http://talents.hashroot.org/api/employee-add';
+      
+     
+            $ch         = curl_init();
+            curl_setopt($ch, CURLOPT_URL,$url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response   = curl_exec($ch);
+            curl_close ($ch);
+       
+    }
+    
+
+    public function curlDelete($request)
+    {
+        $fields_string  =  $request;
+       // Log::info( "curlrequest",[$fields_string]);
+
+        $header         = [
+                            'Accept: application/json',
+                            'Cache-Control: no-cache',
+                          ];
+       
+            $url          = 'http://talents.hashroot.org/api/employee-delete';
+      
+     
+            $ch         = curl_init();
+            curl_setopt($ch, CURLOPT_URL,$url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response   = curl_exec($ch);
+            curl_close ($ch);
+       
     }
 }

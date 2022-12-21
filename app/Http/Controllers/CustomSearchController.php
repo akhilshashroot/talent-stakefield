@@ -40,8 +40,8 @@ class CustomSearchController extends Controller
           
             $data = StakefieldUser::select( 'stakefield_users.id','stakefield_users.availability','stakefield_users.employee_id',
             'stakefield_users.experience','stakefield_users.turnaround_time','stakefield_users.skill_set',
-            'stakefield_users.rate','stakefield_users.skill_data'
-            )
+            'stakefield_users.rate','stakefield_users.skill_data', 'stakefield_users.display_status'
+            )->where( 'stakefield_users.display_status',1)
             ->orderby($col,$dec);
             return Datatables::of($data)
                     ->addIndexColumn()
